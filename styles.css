@@ -1,0 +1,40 @@
+/* General Layout */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+header,
+main,
+article,
+section,
+div {
+  display: flex;
+}
+
+main,
+div {
+  flex-direction: row;
+}
+
+section,
+article {
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+header {
+  justify-content: center;
+  align-items: center;
+}
+
+/* Left Section */
+article {
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Middle Section */
+
+/* Right Section */
