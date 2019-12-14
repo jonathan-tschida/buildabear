@@ -60,6 +60,14 @@ header {
   scroll-snap-align: center;
 }
 
+.slide-link {
+  text-decoration: none;
+  background-color: #DD4F40;
+  color: white;
+  border-radius: 100%;
+  padding: 3px 8px;
+}
+
 /* Middle Section */
 
 /* Right Section */
