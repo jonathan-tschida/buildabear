@@ -30,9 +30,15 @@ header {
 }
 
 /* Left Section */
-article {
-  align-items: flex-start;
+
+.slides-container {
   width: 100%;
+  display: inline;
+  background-color: #487AB9;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 10px;
+  text-align: center;
 }
 
 /* Middle Section */
