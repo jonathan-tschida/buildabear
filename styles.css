@@ -60,6 +60,17 @@ header {
   scroll-snap-align: center;
 }
 
+.item {
+  height: 50px;
+  display: inline-block;
+}
+
+.clothes span img {
+  height: 90px;
+  position: relative;
+  bottom: 30px;
+}
+
 .slide-link {
   text-decoration: none;
   background-color: #DD4F40;
