@@ -37,7 +37,7 @@ header {
 /* Left Section */
 .items-column {
   width: 30%;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .slides {
@@ -49,7 +49,7 @@ header {
 }
 
 .slides-container {
-  width: 100%;
+  width: 300px;
   display: inline;
   background-color: #487AB9;
   border-radius: 10px;
@@ -59,7 +59,7 @@ header {
 }
 
 .item-slide {
-  width: 100%;
+  width: 300px;
   flex-shrink: 0;
   overflow: hidden;
   scroll-snap-align: center;
