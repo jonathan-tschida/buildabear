@@ -29,6 +29,11 @@ header {
   align-items: center;
 }
 
+.sub-title {
+  color: white;
+  padding-bottom: 10px;
+}
+
 /* Left Section */
 .items-column {
   width: 30%;
@@ -69,6 +74,11 @@ header {
   height: 90px;
   position: relative;
   bottom: 30px;
+}
+
+.slide-links {
+  text-align: center;
+  display: inline-block;
 }
 
 .slide-link {
