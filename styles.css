@@ -30,6 +30,18 @@ header {
 }
 
 /* Left Section */
+.items-column {
+  width: 30%;
+  align-items: flex-start;
+}
+
+.slides {
+  height: 70px;
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
 
 .slides-container {
   width: 100%;
