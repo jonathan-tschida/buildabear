@@ -41,6 +41,13 @@ header {
   text-align: center;
 }
 
+.item-slide {
+  width: 100%;
+  flex-shrink: 0;
+  overflow: hidden;
+  scroll-snap-align: center;
+}
+
 /* Middle Section */
 
 /* Right Section */
