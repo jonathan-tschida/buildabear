@@ -4,6 +4,10 @@
   margin: 0;
 }
 
+@font-face {
+  font-family: 'Coming Soon', cursive;
+}
+
 header,
 main,
 article,
@@ -49,6 +53,8 @@ article {
   width: 70px;
   margin: 10px;
   padding: 10px;
+  font-family: 'Coming Soon', cursive;
+  font-weight: 1000;
 }
 
 /* Right Section */
