@@ -75,4 +75,9 @@ article {
   border-radius: 3px;
 }
 
+.item-button:hover {
+  background-image: linear-gradient(#DD4F40 80%, white 95%, #DD4F40 100%);
+  cursor: pointer;
+}
+
 /* Right Section */
