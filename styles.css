@@ -44,12 +44,12 @@ article {
   color: white;
 }
 
-/* Middle Section */
-
-.right-column {
+.left-column {
   width: 30%;
   margin: 20px;
 }
+/* Middle Section */
+
 
 .items {
   background-color: #487AB9;
@@ -81,3 +81,13 @@ article {
 }
 
 /* Right Section */
+.saved {
+  background-color: white;
+  width: 90%;
+}
+.right-column {
+  background-color: #487AB9;
+  width: 40%;
+  margin: 20px;
+  border-radius:3px;
+}
