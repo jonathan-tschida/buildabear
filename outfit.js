@@ -6,10 +6,13 @@ class Outfit{
     this.background = background;
   }
   addGarmet(garmentName){
-    this.garmen[i]=garmentName;
+    this.garment[0]=garmentName;
+    this.garment[1]=garmentName;
+    this.garment[2]=garmentName;
   }
   removeGarmet(garmetName){
 
   }
 }
+
 module.exports = Outfit;
