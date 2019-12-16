@@ -131,40 +131,45 @@ article {
 /* Middle Section */
 
 .middle-column {
-  width: 60%;
+  /* width: 60%; */
 }
 
 .bear-box {
-
+  justify-content: center;
 }
 
 .bear {
-  height: 500px;
-  margin-top: 31%;
-  margin-left: 8%;
+  /* height: 500px; */
+  height: 400px;
+  align-self: flex-end;
+  /* margin-top: 31%; */
+  /* margin-left: 8%; */
 }
 
 .background {
   border: 20px solid #487AB9;
   border-radius: 10px;
-  height: 740px;
-  width: 700px;
+  background-size: 600px;
+  /* height: 740px; */
+  height: 580px;
+  width: 600px;
+  /* width: 700px; */
 }
 
 .park {
-  background: url("./assets/park.png");
+  background-image: url("./assets/park.png");
 }
 
 .space {
-  background: url("./assets/outerspace.png");
+  background-image: url("./assets/outerspace.png");
 }
 
 .beach {
-  background: url("./assets/beach.png");
+  background-image: url("./assets/beach.png");
 }
 
 .hearts {
-  background: url("./assets/hearts.png");
+  background-image: url("./assets/hearts.png");
 }
 
 .blue {
