@@ -32,6 +32,7 @@ header {
   justify-content: center;
   align-items: center;
   height: 3.5em;
+  margin-bottom: 1em;
   background-color: #F6EC5F;
   font-family: 'Coming Soon', cursive;
   color:white;
@@ -85,7 +86,7 @@ article {
 
 .left-column {
   width: 30%;
-  margin: 20px;
+  margin: 0px 20px;
 }
 /* Middle Section */
 
@@ -93,6 +94,7 @@ article {
 .items {
   background-color: #487AB9;
   margin: 10px;
+  margin-top: 0px;
   padding: 10px;
   border-radius: 3px;
   box-shadow: 2px 2px 10px rgba(0,0,0,0.1), -2px -2px 10px rgba(0,0,0,0.1);
@@ -119,6 +121,53 @@ article {
   cursor: pointer;
 }
 
+/* Middle Section */
+
+.middle-column {
+  width: 60%;
+}
+
+.bear-box {
+
+}
+
+.bear {
+  height: 500px;
+  margin-top: 31%;
+  margin-left: 8%;
+}
+
+.background {
+  border: 20px solid #487AB9;
+  border-radius: 10px;
+  height: 740px;
+  width: 700px;
+}
+
+.park {
+  background: url("./assets/park.png");
+}
+
+.space {
+  background: url("./assets/outerspace.png");
+}
+
+.beach {
+  background: url("./assets/beach.png");
+}
+
+.hearts {
+  background: url("./assets/hearts.png");
+}
+
+.blue {
+  background-color: #487AB9;
+}
+
+.yellow {
+  background-color: #F6EC5F;
+}
+
 /* Right Section */
 .saved_outfit {
   display:flex;
@@ -133,11 +182,13 @@ article {
   background-color: white;
   font-family: 'Coming Soon', cursive;
 }
+
  .active {
   background-color: #F6EC5F;
 }
+
 .right-column {
-  margin: 20px;
+  margin: 0px 20px 10px;
   border-radius:3px;
   width: 30%;
   padding-top: 2em;
