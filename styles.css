@@ -95,10 +95,15 @@ article {
 }
 
 .bear {
+  height: 500px;
+  margin-top: 170px;
+  margin-left: 80px;
 }
 
 .park {
-  background: url("./assets/park.png")
+  background: url("./assets/park.png");
+  height: 100%;
+  width: 100%;
 }
 /* Right Section */
 .saved_outfit {
