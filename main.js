@@ -4,6 +4,7 @@ var itemButtons = document.querySelectorAll(".item-button");
 var saveButton = document.querySelector('.save-button');
 var titleInput = document.querySelector('.save-title-input');
 var bearBox = document.getElementById("bear-container");
+//Store outfit Objects inside of an array(Should make this a local storage item)
 var outfits =[];
 var id = 0;
 var currentOutfit = new Outfit();
@@ -37,8 +38,10 @@ function changeGarment() {
   var garmentName = event.target.innerText;
   for (var i = 0; i < garmentNodeList.length; i++) {
     for (var j = 0; j < garmentNodeList[i].length; j++) {
-      if (garmentNodeList[i][j] === garmentName) {
+      if (garmentNodeList[i][j].innerText === garmentName) {
         garmentName = garmentName.toLowerCase().replace(/ /g,'');
+        console.log(garmentName);
+        console.log(i);
         currentOutfit.addGarment(i, garmentName);
       }
     }
