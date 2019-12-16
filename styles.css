@@ -20,6 +20,10 @@ main,
 div {
   flex-direction: row;
 }
+main{
+  /* background-color: #DD4F40; */
+  padding-top: 20px;
+}
 
 section,
 article {
@@ -31,7 +35,43 @@ article {
 header {
   justify-content: center;
   align-items: center;
-  height: 100px;
+  height: 4.5em;
+  /* margin-bottom: 1em; */
+  background-color: #F6EC5F;
+  font-family: 'Kalam', cursive;
+  color:white;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+.header-container {
+  justify-content: center;
+  align-self: flex-start;
+  width:100%;
+  height: 3em;
+  border-radius: 0% 0% 35px 35px;
+  background-color: #487AB9;
+}
+.header-container::before {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  top: 4.5em;
+  left:0;
+  height: 60px;
+  width: 25px;
+  border-top-left-radius: 35px;
+  box-shadow: 0 -24px 0 0 #F6EC5F;
+}
+.header-container::after {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  top: 4.5em;
+  right:0;
+  height: 50px;
+  width: 25px;
+  border-top-right-radius: 35px;
+  box-shadow: 0 -24px 0 0 #F6EC5F;
 }
 
 /* Left Section */
@@ -69,7 +109,8 @@ article {
   flex-wrap: wrap;
 }
 
-.item-button {
+.item-button,
+.save-button {
   width: 80px;
   margin: 10px;
   padding: 8px;
@@ -81,7 +122,8 @@ article {
   border-radius: 3px;
 }
 
-.item-button:hover {
+.item-button:hover,
+.save-button:hover {
   background-image: linear-gradient(#DD4F40 80%, white 95%, #DD4F40 100%);
   cursor: pointer;
 }
@@ -131,6 +173,14 @@ article {
 
 .yellow {
   background-color: #F6EC5F;
+}
+
+input {
+  margin-top: 10px;
+  border: 2px dashed gray;
+  text-align: center;
+  font-family: 'Coming Soon', cursive;
+  font-size: 1.17em;
 }
 
 /* Right Section */
