@@ -20,6 +20,10 @@ main,
 div {
   flex-direction: row;
 }
+main{
+  /* background-color: #DD4F40; */
+  padding-top: 20px;
+}
 
 section,
 article {
@@ -32,7 +36,7 @@ header {
   justify-content: center;
   align-items: center;
   height: 4.5em;
-  margin-bottom: 1em;
+  /* margin-bottom: 1em; */
   background-color: #F6EC5F;
   font-family: 'Kalam', cursive;
   color:white;
