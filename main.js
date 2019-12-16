@@ -38,6 +38,7 @@ function changeGarment() {
   for (var i = 0; i < garmentNodeList.length; i++) {
     for (var j = 0; j < garmentNodeList[i].length; j++) {
       if (garmentNodeList[i][j] === garmentName) {
+        garmentName = garmentName.toLowerCase().replace(/ /g,'');
         currentOutfit.addGarment(i, garmentName);
       }
     }
