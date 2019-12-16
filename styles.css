@@ -106,7 +106,7 @@ article {
   border: 20px solid #487AB9;
   border-radius: 10px;
   height: 740px;
-  width: 98%;
+  width: 700px;
 }
 
 .park {
@@ -147,11 +147,13 @@ article {
   background-color: white;
   font-family: 'Coming Soon', cursive;
 }
+
  .active {
   background-color: #F6EC5F;
 }
+
 .right-column {
-  margin: 0px 20px;
+  margin: 0px 20px 10px;
   border-radius:3px;
   width: 30%;
   padding-top: 2em;
