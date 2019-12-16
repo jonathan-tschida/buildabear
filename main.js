@@ -1,17 +1,24 @@
 var backgroundButtons = document.getElementById("background-buttons");
-var itemButtons = document.querySelector(".left-column");
+var itemButtonParent = document.querySelector(".left-column");
+var itemButtons = document.querySelectorAll(".item-button");
 var saveButton = document.querySelector('.save-button');
 var titleInput = document.querySelector('.save-title-input');
 var bearBox = document.getElementById("bear-container");
 var outfits =[];
 var id = 0;
 var currentOutfit = new Outfit();
+var garmentNodeList = generateNestedNodeList();
 // store default background in local storage
 window.localStorage.setItem('currentBackground', 'blue')
 // use event bubbling on background button container
 backgroundButtons.addEventListener('click', changeBackground);
-itemButtons.addEventListener('click', changeGarment);
+itemButtonParent.addEventListener('click', changeGarment);
 saveButton.addEventListener('click', saveOutfit);
+
+function generateNestedNodeList(){
+  var tempNodeList = Array.prototype.slice.call(document.querySelectorAll('.item-button'));
+  return[tempNodeList.slice(0,4),tempNodeList.slice(4,7),tempNodeList.slice(7,12)]
+}
 
 function changeBackground() {
   // button text and convert to lower case
@@ -27,13 +34,13 @@ function changeBackground() {
   bearBox.classList.add(background);
 }
 function changeGarment() {
-  if (event.target.classList.contains('item-button') && event.target.parentElement.id != "background-buttons" ) {
-    var garment = event.target.innerText.toLowerCase();
-    garment = garment.replace(/\s/g, "");
-    var i = event.target.parentElement.id;
-    console.log( event.target.parentElement.id);
-    currentOutfit.addGarment(garment,i);
-    //Add class to bearBox display elements.
+  var garmentName = event.target.innerText;
+  for (var i = 0; i < garmentNodeList.length; i++) {
+    for (var j = 0; j < garmentNodeList[i].length; j++) {
+      if (garmentNodeList[i][j] === garmentName) {
+        currentOutfit.addGarment(i, garmentName);
+      }
+    }
   }
 }
 function saveOutfit(){

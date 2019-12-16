@@ -5,12 +5,16 @@ class Outfit{
     this.garment = garment;
     this.background = background;
   }
-  addGarmet(garmentName){
+  addGarmet(i,garmentName){
     //Find garmetName in a list. Assign it to position [0,1,2]
     // based on [head,body,accessories]
+    this.garment[i]=garmentName;
   }
   removeGarmet(garmetName){
     this.garment[this.garment.indexOf(garmentName)] = "";
+  }
+  logMessage(){
+    console.log(event.target);
   }
 }
 
