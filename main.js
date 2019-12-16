@@ -6,7 +6,7 @@ var titleInput = document.querySelector('.save-title-input');
 var bearBox = document.getElementById("bear-container");
 //Store outfit Objects inside of an array(Should make this a local storage item)
 var outfits =[];
-var id = 0;
+window.localStorage.setItem('id','0');
 var currentOutfit = new Outfit();
 var garmentNodeList = generateNestedNodeList();
 // store default background in local storage
@@ -40,21 +40,17 @@ function changeGarment() {
     for (var j = 0; j < garmentNodeList[i].length; j++) {
       if (garmentNodeList[i][j].innerText === garmentName) {
         garmentName = garmentName.toLowerCase().replace(/ /g,'');
-        console.log(garmentName);
-        console.log(i);
         currentOutfit.addGarment(i, garmentName);
       }
     }
   }
 }
+
 function saveOutfit(){
-  //create new ID
-  id +=1;
-  currentOutfit.id = id;
+  var curId = parseInt(localStorage.getItem("id"));
+  currentOutfit.id = curId;
+  localStorage.setItem("id",++curId);
   currentOutfit.title = titleInput.innerText;
   //push new object to the array
   outfits.push(currentOutfit);
-}
-function updateDisplay(){
-  //this should be called to update the bearBox display.
 }
