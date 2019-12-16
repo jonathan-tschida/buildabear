@@ -84,6 +84,22 @@ article {
   cursor: pointer;
 }
 
+/* Middle Section */
+
+.middle-column {
+  width: 60%;
+}
+
+.bear-box {
+
+}
+
+.bear {
+}
+
+.park {
+  background: url("./assets/park.png")
+}
 /* Right Section */
 .saved_outfit {
   display:flex;
