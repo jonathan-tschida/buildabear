@@ -113,12 +113,24 @@ article {
   background: url("./assets/park.png");
 }
 
-.outerspace {
-  background: url("./assets/outerspace.png")
+.space {
+  background: url("./assets/outerspace.png");
 }
 
 .beach {
-  background: url("./assets/beach.png")
+  background: url("./assets/beach.png");
+}
+
+.hearts {
+  background: url("./assets/hearts.png");
+}
+
+.blue {
+  background-color: #487AB9;
+}
+
+.yellow {
+  background-color: #F6EC5F;
 }
 
 /* Right Section */
