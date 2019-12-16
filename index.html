@@ -6,10 +6,10 @@
   </head>
   <body>
     <header>
-      <h1>Build-A-Bear</h1>
+      <h1 class="main-title">Build-A-Bear</h1>
     </header>
     <main>
-      <section class="right-column">
+      <section class="left-column">
         <article class="items">
           <h3 class="sub-title">Hats</h3>
           <div class="button-container">
@@ -39,7 +39,7 @@
         </article>
         <article class="items">
           <h3 class="sub-title">Backgrounds</h3>
-          <div class="button-container">
+          <div id="background-buttons" class="button-container">
             <button class="item-button">Blue</button>
             <button class="item-button">Park</button>
             <button class="item-button">Beach</button>
@@ -49,31 +49,43 @@
           </div>
         </article>
       </section>
-      <section>
-        <div>
-          <img src="./assets/bear.png" />
+      <section class="middle-column">
+        <div id="bear-container" class="bear-box blue background">
+          <img class="bear" src="./assets/bear.png" />
         </div>
         <input type="text" />
         <button>SAVE</button>
       </section>
-      <section>
-        <h3>Saved Outfits</h3>
-        <div>
+      <section class = "right-column">
+          <h2 class = "title">Saved Outfits</h3>
+        <figure class = "saved_outfit active">
           <h3>Fancy</h3>
-          <button>X</button>
-        </div>
-        <div>
+          <button class="close-outfit-button">
+            <div class="cross"></div>
+            <div class="cross vertical"></div>
+          </button>
+        </figure>
+        <figure class = "saved_outfit">
           <h3>A day out</h3>
-          <button>X</button>
-        </div>
-        <div>
+          <button class="close-outfit-button">
+            <div class="cross"></div>
+            <div class="cross vertical"></div>
+          </button>
+        </figure>
+        <figure class = "saved_outfit">
           <h3>beach time</h3>
-          <button>X</button>
-        </div>
-        <div>
+          <button class="close-outfit-button">
+            <div class="cross"></div>
+            <div class="cross vertical"></div>
+          </button>
+        </figure>
+        <figure class = "saved_outfit">
           <h3>Mars Prom</h3>
-          <button>X</button>
-        </div>
+          <button class="close-outfit-button">
+            <div class="cross"></div>
+            <div class="cross vertical"></div>
+          </button>
+        </figure>
       </section>
     </main>
     <script type="text/javascript" src="outfit.js"></script>
