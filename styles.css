@@ -109,7 +109,8 @@ article {
   flex-wrap: wrap;
 }
 
-.item-button {
+.item-button,
+.save-button {
   width: 80px;
   margin: 10px;
   padding: 8px;
@@ -121,7 +122,8 @@ article {
   border-radius: 3px;
 }
 
-.item-button:hover {
+.item-button:hover,
+.save-button:hover {
   background-image: linear-gradient(#DD4F40 80%, white 95%, #DD4F40 100%);
   cursor: pointer;
 }
@@ -171,6 +173,14 @@ article {
 
 .yellow {
   background-color: #F6EC5F;
+}
+
+input {
+  margin-top: 10px;
+  border: 2px dashed gray;
+  text-align: center;
+  font-family: 'Coming Soon', cursive;
+  font-size: 1.17em;
 }
 
 /* Right Section */
