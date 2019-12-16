@@ -13,9 +13,6 @@ class Outfit{
   removeGarmet(garmetName){
     this.garment[this.garment.indexOf(garmentName)] = "";
   }
-  logMessage(){
-    console.log(event.target);
-  }
 }
 
 // module.exports = Outfit;
