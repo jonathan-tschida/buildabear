@@ -1,5 +1,5 @@
 var backgroundButtons = document.getElementById("background-buttons");
-var itemButtons = document.querySelector(".items");
+var itemButtons = document.querySelector(".left-column");
 var saveButton = document.querySelector('.save-button');
 var titleInput = document.querySelector('.save-title-input');
 var bearBox = document.getElementById("bear-container");
@@ -27,18 +27,11 @@ function changeBackground() {
   bearBox.classList.add(background);
 }
 function changeGarment() {
-  if (event.target.classList.contains('item-button')) {
+  if (event.target.classList.contains('item-button') && event.target.parentElement.id != "background-buttons" ) {
     var garment = event.target.innerText.toLowerCase();
     garment = garment.replace(/\s/g, "");
-    var i = null;
-    if (event.target.ParentElement.classList.contains('hat')) {
-      i = 0;
-    } else if (event.target.ParentElement.classList.contains('clothes')) {
-      i = 1;
-    } else {
-      i = 2;
-    }
-    // console.log( event.target.parentElement.classList.contains('hat'));
+    var i = event.target.parentElement.id;
+    console.log( event.target.parentElement.id);
     currentOutfit.addGarment(garment,i);
     //Add class to bearBox display elements.
   }
