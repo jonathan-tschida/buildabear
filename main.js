@@ -1,4 +1,5 @@
 var backgroundButtons = document.getElementById("background-buttons");
+var itemButtons = document.querySelector(".items");
 var saveButton = document.querySelector('.save-button');
 var titleInput = document.querySelector('.save-title-input');
 var bearBox = document.getElementById("bear-container");
@@ -9,6 +10,7 @@ var currentOutfit = new Outfit();
 window.localStorage.setItem('currentBackground', 'blue')
 // use event bubbling on background button container
 backgroundButtons.addEventListener('click', changeBackground);
+itemButtons.addEventListener('click', changeGarment);
 saveButton.addEventListener('click', saveOutfit);
 
 function changeBackground() {
@@ -24,7 +26,23 @@ function changeBackground() {
   // add new background that was stored in button text
   bearBox.classList.add(background);
 }
-
+function changeGarment() {
+  if (event.target.classList.contains('item-button')) {
+    var garment = event.target.innerText.toLowerCase();
+    garment = garment.replace(/\s/g, "");
+    var i = null;
+    if (event.target.ParentElement.classList.contains('hat')) {
+      i = 0;
+    } else if (event.target.ParentElement.classList.contains('clothes')) {
+      i = 1;
+    } else {
+      i = 2;
+    }
+    // console.log( event.target.parentElement.classList.contains('hat'));
+    currentOutfit.addGarment(garment,i);
+    //Add class to bearBox display elements.
+  }
+}
 function saveOutfit(){
   //create new ID
   id +=1;
@@ -32,4 +50,7 @@ function saveOutfit(){
   currentOutfit.title = titleInput.innerText;
   //push new object to the array
   outfits.push(currentOutfit);
+}
+function updateDisplay(){
+  //this should be called to update the bearBox display.
 }
