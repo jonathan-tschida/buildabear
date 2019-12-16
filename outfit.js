@@ -1,14 +1,12 @@
 class Outfit{
-  constructor(id,title,garment,background){
+  constructor(id=1,title='Test',garment=[],background='blue'){
     this.id = id;
-    this.title = 'title';
-    this.garment = ['Hat','Clothes','Accessories'];
+    this.title = title;
+    this.garment = garment;
     this.background = background;
   }
   addGarmet(garmentName){
     this.garment[0]=garmentName;
-    this.garment[1]=garmentName;
-    this.garment[2]=garmentName;
   }
   removeGarmet(garmetName){
 
