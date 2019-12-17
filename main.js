@@ -50,7 +50,7 @@ function saveOutfit(){
   var curId = parseInt(localStorage.getItem("id"));
   currentOutfit.id = curId;
   localStorage.setItem("id",++curId);
-  currentOutfit.title = titleInput.innerText;
+  currentOutfit.title = titleInput.value;
   //push new object to the array
   outfits.push(currentOutfit);
 }
