@@ -21,7 +21,7 @@ function changeBackground() {
     var newBackground = event.target.innerText.toLowerCase();
     var currentBackground = window.localStorage.getItem('currentBackground');
     window.localStorage.setItem('currentBackground', newBackground)
-    currentOutfit.background = currentBackground;
+    currentOutfit.background = newBackground;
     bearBox.classList.remove(currentBackground);
     bearBox.classList.add(newBackground);
   }
