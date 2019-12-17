@@ -46,12 +46,16 @@ function changeGarment() {
 }
 
 function selectButton() {
-  if(event.target.classList.contains('item-button')) {
-    var garmentButtons = event.target.parentElement.querySelectorAll('.item-button')
-    for(var i = 0; i < garmentButtons.length; i++) {
-      garmentButtons[i].classList.remove('selected-button')
+  if (event.target.classList.contains('item-button')) {
+    if (event.target.classList.contains('selected-button')) {
+      event.target.classList.remove('selected-button');
+    } else {
+      var garmentButtons = event.target.parentElement.querySelectorAll('.item-button')
+      for(var i = 0; i < garmentButtons.length; i++) {
+        garmentButtons[i].classList.remove('selected-button')
+      }
+      event.target.classList.add('selected-button');
     }
-    event.target.classList.add('selected-button');
   }
 }
 
