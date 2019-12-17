@@ -197,6 +197,14 @@ article {
   background-size: 110px;
 }
 
+.smart-watch {
+  bottom: 110px;
+  right: 350px;
+  transform: rotate(80deg);
+  background-image: url("./assets/smartwatch.png");
+  background-size: 50px;
+}
+
 .background {
   border: 20px solid #487AB9;
   border-radius: 10px;
