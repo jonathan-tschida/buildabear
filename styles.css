@@ -110,11 +110,36 @@ article {
 /* Middle Section */
 .bear-box {
   justify-content: center;
+  position: relative;
 }
 
 .bear {
   height: 400px;
   align-self: flex-end;
+}
+
+.hat-box {
+  position: absolute;
+  background-repeat: no-repeat;
+}
+
+.top-hat {
+  bottom: 255px;
+  right: 140px;
+  transform: rotate(15deg);
+  height: 225px;
+  width: 225px;
+  background-image: url("./assets/tophat.png");
+  background-size: 225px;
+}
+
+.sun-hat {
+  bottom: 235px;
+  right: 135px;
+  height: 225px;
+  width: 225px;
+  background-image: url("./assets/sunhat.png");
+  background-size: 225px;
 }
 
 .background {
