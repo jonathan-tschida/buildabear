@@ -110,11 +110,115 @@ article {
 /* Middle Section */
 .bear-box {
   justify-content: center;
+  position: relative;
 }
 
 .bear {
   height: 400px;
   align-self: flex-end;
+}
+
+.hat-box {
+  position: absolute;
+  background-repeat: no-repeat;
+  height: 225px;
+  width: 225px;
+}
+
+.top-hat {
+  bottom: 255px;
+  right: 140px;
+  transform: rotate(15deg);
+  background-image: url("./assets/tophat.png");
+  background-size: 225px;
+}
+
+.sun-hat {
+  bottom: 235px;
+  right: 135px;
+  background-image: url("./assets/sunhat.png");
+  background-size: 225px;
+}
+
+.bow {
+  bottom: 145px;
+  right: 125px;
+  transform: rotate(45deg);
+  background-image: url("./assets/hairbow.png");
+  background-size: 150px;
+}
+
+.crown {
+  bottom: 185px;
+  right: 115px;
+  transform: rotate(20deg);
+  background-image: url("./assets/crown.png");
+  background-size: 150px;
+}
+
+.space-helmet {
+  bottom: 200px;
+  right: 150px;
+  transform: rotate(10deg);
+  background-image: url("./assets/spacehelmet.png");
+  background-size: 225px;
+}
+
+.clothing-box {
+  position: absolute;
+  bottom: 0px;
+  right: 80px;
+  background-repeat: no-repeat;
+  background-size: 400px;
+  height: 400px;
+  width: 400px;
+}
+
+.vest {
+  background-image: url("./assets/vest.png");
+}
+
+.dress {
+  background-image: url("./assets/dress.png");
+}
+
+.accessory-box {
+  position: absolute;
+  background-repeat: no-repeat;
+  height: 150px;
+  width: 150px;
+}
+
+.necklace {
+  bottom: 80px;
+  right: 205px;
+  transform: rotate(10deg);
+  background-image: url("./assets/necklace.png");
+  background-size: 110px;
+}
+
+.bow-tie {
+  bottom: 100px;
+  right: 200px;
+  transform: rotate(10deg);
+  background-image: url("./assets/bowtie.png");
+  background-size: 110px;
+}
+
+.smart-watch {
+  bottom: 110px;
+  right: 350px;
+  transform: rotate(80deg);
+  background-image: url("./assets/smartwatch.png");
+  background-size: 50px;
+}
+
+.sun-glasses {
+  bottom: 160px;
+  right: 195px;
+  transform: rotate(15deg);
+  background-image: url("./assets/sunglasses.png");
+  background-size: 125px;
 }
 
 .background {
