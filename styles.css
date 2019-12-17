@@ -121,14 +121,14 @@ article {
 .hat-box {
   position: absolute;
   background-repeat: no-repeat;
+  height: 225px;
+  width: 225px;
 }
 
 .top-hat {
   bottom: 255px;
   right: 140px;
   transform: rotate(15deg);
-  height: 225px;
-  width: 225px;
   background-image: url("./assets/tophat.png");
   background-size: 225px;
 }
@@ -136,10 +136,16 @@ article {
 .sun-hat {
   bottom: 235px;
   right: 135px;
-  height: 225px;
-  width: 225px;
   background-image: url("./assets/sunhat.png");
   background-size: 225px;
+}
+
+.bow {
+  bottom: 145px;
+  right: 125px;
+  transform: rotate(45deg);
+  background-image: url("./assets/hairbow.png");
+  background-size: 150px;
 }
 
 .background {
