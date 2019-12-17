@@ -156,6 +156,14 @@ article {
   background-size: 150px;
 }
 
+.space-helmet {
+  bottom: 200px;
+  right: 150px;
+  transform: rotate(10deg);
+  background-image: url("./assets/spacehelmet.png");
+  background-size: 225px;
+}
+
 .clothing-box {
   position: absolute;
   bottom: 0px;
