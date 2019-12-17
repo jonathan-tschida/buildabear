@@ -4,14 +4,15 @@ var itemButtons = document.querySelectorAll(".item-button");
 var saveButton = document.querySelector('.save-button');
 var titleInput = document.getElementById('save-title-input');
 var bearBox = document.getElementById("bear-container");
+
 //Store outfit Objects inside of an array(Should make this a local storage item)
 var outfits =[];
 window.localStorage.setItem('id','0');
 var currentOutfit = new Outfit();
 var garmentNodeList = generateNestedNodeList();
-// store default background in local storage
+
 window.localStorage.setItem('currentBackground', 'blue')
-// use event bubbling on background button container
+
 backgroundButtons.addEventListener('click', changeBackground);
 itemButtonParent.addEventListener('click', changeGarment);
 saveButton.addEventListener('click', saveOutfit);
@@ -22,17 +23,13 @@ function generateNestedNodeList(){
 }
 
 function changeBackground() {
-  // button text and convert to lower case
-  var background = event.target.innerText.toLowerCase();
-  // get current background to delete the bear box class
-  // and change the currentBackground in local storage
-  var currentBackground = window.localStorage.getItem('currentBackground');
-  window.localStorage.setItem('currentBackground', background);
-  //Update object background
-  currentOutfit.background = background;
-  bearBox.classList.remove(currentBackground);
-  // add new background that was stored in button text
-  bearBox.classList.add(background);
+  if (event.target.classList.contains('item-button')) {
+    var background = event.target.innerText.toLowerCase();
+    var currentBackground = window.localStorage.getItem('currentBackground');
+    window.localStorage.setItem('currentBackground', background)
+    bearBox.classList.remove(currentBackground);
+    bearBox.classList.add(background);
+  }
 }
 function changeGarment() {
   var garmentName = event.target.innerText;
