@@ -102,7 +102,8 @@ article {
 }
 
 .item-button:hover,
-.save-button:hover {
+.save-button:hover,
+.selected-button {
   background-image: linear-gradient(#DD4F40 80%, white 95%, #DD4F40 100%);
   cursor: pointer;
 }
@@ -213,7 +214,7 @@ article {
   background-size: 50px;
 }
 
-.sun-glasses {
+.sunglasses {
   bottom: 160px;
   right: 195px;
   transform: rotate(15deg);

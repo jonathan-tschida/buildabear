@@ -14,31 +14,50 @@ window.localStorage.setItem('currentBackground', 'blue')
 backgroundButtons.addEventListener('click', changeBackground);
 itemButtonParent.addEventListener('click', changeGarment);
 saveButton.addEventListener('click', saveOutfit);
+itemButtonParent.addEventListener('click', selectButton);
 
 
 function changeBackground() {
   if (event.target.classList.contains('item-button')) {
-    var background = event.target.innerText.toLowerCase();
+    var newBackground = event.target.innerText.toLowerCase();
     var currentBackground = window.localStorage.getItem('currentBackground');
-    window.localStorage.setItem('currentBackground', background)
-    currentOutfit.background = currentBackground;
-    bearBox.classList.remove(background);
-    bearBox.classList.add(background);
+    window.localStorage.setItem('currentBackground', newBackground)
+    currentOutfit.background = newBackground;
+    bearBox.classList.remove(currentBackground);
+    bearBox.classList.add(newBackground);
   }
 }
 
 function changeGarment() {
   switch (event.target.parentElement.id) {
     case 'hat-buttons':
-      currentOutfit.addGarment(0, event.target.innerText)
+      currentOutfit.addGarment(0, event.target.innerText);
+      showGarmentOnBear(event.target.id, 'hat-container');
       break;
     case 'clothes-buttons':
-      currentOutfit.addGarment(1, event.target.innerText)
+      currentOutfit.addGarment(1, event.target.innerText);
+      showGarmentOnBear(event.target.id, 'clothing-container');
       break;
     case 'accessory-buttons':
-      currentOutfit.addGarment(2, event.target.innerText)
+      currentOutfit.addGarment(2, event.target.innerText);
+      showGarmentOnBear(event.target.id, 'accessory-container');
       break;
   }
+}
+
+function selectButton() {
+  if(event.target.classList.contains('item-button')) {
+    var garmentButtons = event.target.parentElement.querySelectorAll('.item-button')
+    for(var i = 0; i < garmentButtons.length; i++) {
+      garmentButtons[i].classList.remove('selected-button')
+    }
+    event.target.classList.add('selected-button');
+  }
+}
+
+function showGarmentOnBear(garmentName, garmentBox) {
+  var garmentContainer = document.getElementById(garmentBox);
+  garmentContainer.classList.add(garmentName);
 }
 
 function saveOutfit() {
@@ -46,8 +65,6 @@ function saveOutfit() {
   currentOutfit.id = curId;
   localStorage.setItem('id', ++curId);
   currentOutfit.title = titleInput.value;
-  console.log(titleInput);
-  console.log(titleInput.value);
   outfits.push(currentOutfit);
   currentOutfit = new Outfit();
 }
