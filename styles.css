@@ -102,7 +102,8 @@ article {
 }
 
 .item-button:hover,
-.save-button:hover {
+.save-button:hover,
+.selected-button {
   background-image: linear-gradient(#DD4F40 80%, white 95%, #DD4F40 100%);
   cursor: pointer;
 }
