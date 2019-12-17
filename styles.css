@@ -205,6 +205,14 @@ article {
   background-size: 50px;
 }
 
+.sun-glasses {
+  bottom: 160px;
+  right: 195px;
+  transform: rotate(15deg);
+  background-image: url("./assets/sunglasses.png");
+  background-size: 125px;
+}
+
 .background {
   border: 20px solid #487AB9;
   border-radius: 10px;
