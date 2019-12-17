@@ -156,6 +156,24 @@ article {
   background-size: 150px;
 }
 
+.clothing-box {
+  position: absolute;
+  bottom: 0px;
+  right: 80px;
+  background-repeat: no-repeat;
+  background-size: 400px;
+  height: 400px;
+  width: 400px;
+}
+
+.vest {
+  background-image: url("./assets/vest.png");
+}
+
+.dress {
+  background-image: url("./assets/dress.png");
+}
+
 .background {
   border: 20px solid #487AB9;
   border-radius: 10px;
