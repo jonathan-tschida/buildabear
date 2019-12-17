@@ -14,6 +14,7 @@ window.localStorage.setItem('currentBackground', 'blue')
 backgroundButtons.addEventListener('click', changeBackground);
 itemButtonParent.addEventListener('click', changeGarment);
 saveButton.addEventListener('click', saveOutfit);
+itemButtonParent.addEventListener('click', selectButton);
 
 
 function changeBackground() {
@@ -41,6 +42,16 @@ function changeGarment() {
       currentOutfit.addGarment(2, event.target.innerText);
       showGarmentOnBear(event.target.id, 'accessory-container');
       break;
+  }
+}
+
+function selectButton() {
+  if(event.target.classList.contains('item-button')) {
+    var garmentButtons = event.target.parentElement.querySelectorAll('.item-button')
+    for(var i = 0; i < garmentButtons.length; i++) {
+      garmentButtons[i].classList.remove('selected-button')
+    }
+    event.target.classList.add('selected-button');
   }
 }
 
