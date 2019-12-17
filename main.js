@@ -30,15 +30,23 @@ function changeBackground() {
 function changeGarment() {
   switch (event.target.parentElement.id) {
     case 'hat-buttons':
-      currentOutfit.addGarment(0, event.target.innerText)
+      currentOutfit.addGarment(0, event.target.innerText);
+      showGarmentOnBear(event.target.id, 'hat-container');
       break;
     case 'clothes-buttons':
-      currentOutfit.addGarment(1, event.target.innerText)
+      currentOutfit.addGarment(1, event.target.innerText);
+      showGarmentOnBear(event.target.id, 'clothing-container');
       break;
     case 'accessory-buttons':
-      currentOutfit.addGarment(2, event.target.innerText)
+      currentOutfit.addGarment(2, event.target.innerText);
+      showGarmentOnBear(event.target.id, 'accessory-container');
       break;
   }
+}
+
+function showGarmentOnBear(garmentName, garmentBox) {
+  var garmentContainer = document.getElementById(garmentBox);
+  garmentContainer.classList.add(garmentName);
 }
 
 function saveOutfit() {
@@ -46,8 +54,6 @@ function saveOutfit() {
   currentOutfit.id = curId;
   localStorage.setItem('id', ++curId);
   currentOutfit.title = titleInput.value;
-  console.log(titleInput);
-  console.log(titleInput.value);
   outfits.push(currentOutfit);
   currentOutfit = new Outfit();
 }
