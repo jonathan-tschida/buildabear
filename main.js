@@ -18,12 +18,12 @@ saveButton.addEventListener('click', saveOutfit);
 
 function changeBackground() {
   if (event.target.classList.contains('item-button')) {
-    var background = event.target.innerText.toLowerCase();
+    var newBackground = event.target.innerText.toLowerCase();
     var currentBackground = window.localStorage.getItem('currentBackground');
-    window.localStorage.setItem('currentBackground', background)
+    window.localStorage.setItem('currentBackground', newBackground)
     currentOutfit.background = currentBackground;
-    bearBox.classList.remove(background);
-    bearBox.classList.add(background);
+    bearBox.classList.remove(currentBackground);
+    bearBox.classList.add(newBackground);
   }
 }
 
