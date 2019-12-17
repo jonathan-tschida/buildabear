@@ -2,7 +2,7 @@ var backgroundButtons = document.getElementById("background-buttons");
 var itemButtonParent = document.querySelector(".left-column");
 var itemButtons = document.querySelectorAll(".item-button");
 var saveButton = document.querySelector('.save-button');
-var titleInput = document.querySelector('.save-title-input');
+var titleInput = document.getElementById('save-title-input');
 var bearBox = document.getElementById("bear-container");
 //Store outfit Objects inside of an array(Should make this a local storage item)
 var outfits =[];
