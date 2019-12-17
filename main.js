@@ -44,7 +44,10 @@ function changeGarment() {
 function saveOutfit() {
   var curId = parseInt(localStorage.getItem('id'));
   currentOutfit.id = curId;
-  localStorage.setItem('id',++curId);
+  localStorage.setItem('id', ++curId);
   currentOutfit.title = titleInput.value;
+  console.log(titleInput);
+  console.log(titleInput.value);
   outfits.push(currentOutfit);
+  currentOutfit = new Outfit();
 }
