@@ -148,6 +148,14 @@ article {
   background-size: 150px;
 }
 
+.crown {
+  bottom: 185px;
+  right: 115px;
+  transform: rotate(20deg);
+  background-image: url("./assets/crown.png");
+  background-size: 150px;
+}
+
 .background {
   border: 20px solid #487AB9;
   border-radius: 10px;
