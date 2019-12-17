@@ -2,16 +2,20 @@ class Outfit{
   constructor() {
     this.id = 1
     this.title = ''
-    this.garments = [];
+    this.garments = [null, null, null];
     this.background = 'blue';
   }
 
-  addGarment(i, garment){
-    this.garments[i] = garment;
+  addGarment(i, garmentName){
+    if (this.garments[i] == garmentName) {
+      this.removeGarment(i);
+    } else {
+      this.garments[i] = garmentName;
+    }
   }
 
-  removeGarment(){
-    this.garment[this.garment.indexOf(garmentName)] = "";
+  removeGarment(i){
+    this.garments[i] = null;
   }
 }
 

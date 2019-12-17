@@ -61,7 +61,11 @@ function selectButton() {
 
 function showGarmentOnBear(garmentName, garmentBox) {
   var garmentContainer = document.getElementById(garmentBox);
-  garmentContainer.classList.add(garmentName);
+  if (garmentContainer.classList.contains(garmentName)) {
+    garmentContainer.classList.remove(garmentName);
+  } else {
+    garmentContainer.classList.add(garmentName);
+  }
 }
 
 function saveOutfit() {
