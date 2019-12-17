@@ -1,16 +1,16 @@
 class Outfit{
-  constructor(id=1,title='Test',garment=['','',''],background='blue'){
-    this.id = id;
-    this.title = title;
-    this.garment = garment;
-    this.background = background;
+  constructor() {
+    this.id = 1
+    this.title = ''
+    this.garments = [];
+    this.background = 'blue';
   }
-  addGarment(i,garmentName){
-    //Find garmentName in a list. Assign it to position [0,1,2]
-    // based on [head,body,accessories]
-    this.garment[i]=garmentName;
+
+  addGarment(i, garment){
+    this.garments[i] = garment;
   }
-  removeGarment(garmentName){
+
+  removeGarment(){
     this.garment[this.garment.indexOf(garmentName)] = "";
   }
 }
