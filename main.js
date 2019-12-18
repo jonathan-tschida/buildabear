@@ -99,4 +99,7 @@ function createSavedOutfitCard() {
 
 function clearBearDisplay() {
   document.getElementById('hat-container').classList = "hat-box";
+  document.getElementById('clothing-container').classList = "clothing-box";
+  document.getElementById('accessory-container').classList = "accessory-box";
+  document.getElementById('bear-container').classList = "bear-box blue background";
 }
