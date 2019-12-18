@@ -261,6 +261,12 @@ input {
   font-size: 1.17em;
 }
 
+.save-button:disabled {
+  background-image: linear-gradient(lightGray 60%, white 80%, lightGray 100%);
+  color: gray;
+  cursor: not-allowed;
+}
+
 /* Right Section */
 .saved_outfit {
   display:flex;
