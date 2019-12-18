@@ -95,7 +95,8 @@ function saveOutfit() {
 }
 
 function addOufitsToLocalStorage() {
-  console.log(JSON.stringify(outfits));
+  window.localStorage.setItem('outfits', JSON.stringify(outfits));
+  console.log(window.localStorage.getItem('outfits'));
 }
 
 function createSavedOutfitCard() {
