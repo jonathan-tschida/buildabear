@@ -78,6 +78,7 @@ function saveOutfit() {
   outfits.push(currentOutfit);
   if(titleInput.value != ''){
     createSavedOutfitCard();
+    clearBearDisplay();
   }
   currentOutfit = new Outfit();
 }
@@ -94,4 +95,8 @@ function createSavedOutfitCard() {
   el.innerHTML = domString;
   var parent = document.querySelector('.saved-cards-container');
   parent.prepend(el.firstChild);
+}
+
+function clearBearDisplay() {
+  document.getElementById('hat-container').classList = "hat-box";
 }
