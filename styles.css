@@ -288,6 +288,10 @@ input {
   background-color: #487AB9;
 }
 
+.saved-cards-container{
+  flex-direction: column;
+}
+
 /* || CSS Styling for Close Button*/
 .close-outfit-button:hover {
   cursor: pointer;

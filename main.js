@@ -76,5 +76,22 @@ function saveOutfit() {
   localStorage.setItem('id', ++curId);
   currentOutfit.title = titleInput.value;
   outfits.push(currentOutfit);
+  if(titleInput.value != ''){
+    createSavedOutfitCard();
+  }
   currentOutfit = new Outfit();
+}
+
+function createSavedOutfitCard() {
+  var domString = `<figure class = "saved_outfit active">
+            <h3>${currentOutfit.title}</h3>
+            <button class="close-outfit-button">
+              <div class="cross"></div>
+              <div class="cross vertical"></div>
+            </button>
+          </figure>`;
+  var el = document.createElement('div');
+  el.innerHTML = domString;
+  var parent = document.querySelector('.saved-cards-container');
+  parent.prepend(el.firstChild);
 }
