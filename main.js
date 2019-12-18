@@ -11,6 +11,8 @@ var currentOutfit = new Outfit();
 
 window.localStorage.setItem('currentBackground', 'blue')
 
+saveButton.disabled = true;
+
 backgroundButtons.addEventListener('click', changeBackground);
 itemButtonParent.addEventListener('click', changeGarment);
 saveButton.addEventListener('click', saveOutfit);
@@ -72,7 +74,11 @@ function showGarmentOnBear(garmentName, garmentBox) {
 }
 
 function enableSaveButton() {
-  
+  if (titleInput.value == '') {
+    saveButton.disabled = true;
+  } else {
+    saveButton.disabled = false;
+  }
 }
 
 function saveOutfit() {
@@ -81,11 +87,10 @@ function saveOutfit() {
   localStorage.setItem('id', ++curId);
   currentOutfit.title = titleInput.value;
   outfits.push(currentOutfit);
-  if(titleInput.value != ''){
-    createSavedOutfitCard();
-    clearBearDisplay();
-    titleInput.value = '';
-  }
+  createSavedOutfitCard();
+  clearBearDisplay();
+  titleInput.value = '';
+  enableSaveButton();
   currentOutfit = new Outfit();
 }
 
