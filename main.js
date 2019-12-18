@@ -19,7 +19,6 @@ saveButton.addEventListener('click', saveOutfit);
 itemButtonParent.addEventListener('click', selectButton);
 titleInput.addEventListener('keyup', enableSaveButton);
 
-
 function changeBackground() {
   if (event.target.classList.contains('item-button')) {
     var newBackground = event.target.innerText.toLowerCase();
@@ -91,7 +90,12 @@ function saveOutfit() {
   clearBearDisplay();
   titleInput.value = '';
   enableSaveButton();
+  addOufitsToLocalStorage()
   currentOutfit = new Outfit();
+}
+
+function addOufitsToLocalStorage() {
+  console.log(JSON.stringify(outfits));
 }
 
 function createSavedOutfitCard() {
