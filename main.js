@@ -15,6 +15,7 @@ backgroundButtons.addEventListener('click', changeBackground);
 itemButtonParent.addEventListener('click', changeGarment);
 saveButton.addEventListener('click', saveOutfit);
 itemButtonParent.addEventListener('click', selectButton);
+titleInput.addEventListener('keyup', enableSaveButton);
 
 
 function changeBackground() {
@@ -68,6 +69,10 @@ function showGarmentOnBear(garmentName, garmentBox) {
     garmentContainer.className = className;
     garmentContainer.classList.add(garmentName);
   }
+}
+
+function enableSaveButton() {
+  
 }
 
 function saveOutfit() {
