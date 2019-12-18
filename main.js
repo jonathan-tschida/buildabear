@@ -98,6 +98,10 @@ function createSavedOutfitCard() {
 }
 
 function clearBearDisplay() {
+  var garmentButtons = document.querySelectorAll('.item-button')
+  for(var i = 0; i < garmentButtons.length; i++) {
+    garmentButtons[i].classList.remove('selected-button')
+  }
   document.getElementById('hat-container').classList = "hat-box";
   document.getElementById('clothing-container').classList = "clothing-box";
   document.getElementById('accessory-container').classList = "accessory-box";
