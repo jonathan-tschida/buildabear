@@ -64,6 +64,8 @@ function showGarmentOnBear(garmentName, garmentBox) {
   if (garmentContainer.classList.contains(garmentName)) {
     garmentContainer.classList.remove(garmentName);
   } else {
+    var className = garmentContainer.className.split(" ")[0];
+    garmentContainer.className = className;
     garmentContainer.classList.add(garmentName);
   }
 }
