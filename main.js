@@ -3,6 +3,7 @@ var itemButtonParent = document.querySelector(".left-column");
 var saveButton = document.querySelector('.save-button');
 var titleInput = document.getElementById('save-title-input');
 var bearBox = document.getElementById("bear-container");
+var savedOutfits = document.querySelector('.saved-cards-container');
 
 //Store outfit Objects inside of an array(Should make this a local storage item)
 var outfits = loadOutfitsFromLocalStorage();;
@@ -18,6 +19,7 @@ itemButtonParent.addEventListener('click', changeGarment);
 saveButton.addEventListener('click', saveOutfit);
 itemButtonParent.addEventListener('click', selectButton);
 titleInput.addEventListener('keyup', enableSaveButton);
+savedOutfits.addEventListener('click', removeCard);
 
 function changeBackground() {
   if (event.target.classList.contains('item-button')) {
@@ -131,4 +133,10 @@ function clearBearDisplay() {
   document.getElementById('clothing-container').classList = "clothing-box";
   document.getElementById('accessory-container').classList = "accessory-box";
   document.getElementById('bear-container').classList = "bear-box blue background";
+}
+
+function removeCard(event) {
+  if (event.target.classList.contains('close-outfit-button')) {
+    event.target.parentNode.remove();
+  }
 }
