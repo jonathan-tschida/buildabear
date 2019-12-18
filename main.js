@@ -90,11 +90,11 @@ function saveOutfit() {
   clearBearDisplay();
   titleInput.value = '';
   enableSaveButton();
-  addOufitsToLocalStorage()
+  addOutfitsToLocalStorage()
   currentOutfit = new Outfit();
 }
 
-function addOufitsToLocalStorage() {
+function addOutfitsToLocalStorage() {
   window.localStorage.setItem('outfits', JSON.stringify(outfits));
 }
 
