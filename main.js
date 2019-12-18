@@ -5,7 +5,7 @@ var titleInput = document.getElementById('save-title-input');
 var bearBox = document.getElementById("bear-container");
 
 //Store outfit Objects inside of an array(Should make this a local storage item)
-var outfits =[];
+var outfits = loadOutfitsFromLocalStorage();;
 window.localStorage.setItem('id','0');
 var currentOutfit = new Outfit();
 
@@ -18,7 +18,6 @@ itemButtonParent.addEventListener('click', changeGarment);
 saveButton.addEventListener('click', saveOutfit);
 itemButtonParent.addEventListener('click', selectButton);
 titleInput.addEventListener('keyup', enableSaveButton);
-
 
 function changeBackground() {
   if (event.target.classList.contains('item-button')) {
@@ -87,16 +86,31 @@ function saveOutfit() {
   localStorage.setItem('id', ++curId);
   currentOutfit.title = titleInput.value;
   outfits.push(currentOutfit);
-  createSavedOutfitCard();
+  createSavedOutfitCard(currentOutfit);
   clearBearDisplay();
   titleInput.value = '';
   enableSaveButton();
+  addOutfitsToLocalStorage()
   currentOutfit = new Outfit();
 }
 
-function createSavedOutfitCard() {
+function addOutfitsToLocalStorage() {
+  window.localStorage.setItem('outfits', JSON.stringify(outfits));
+}
+
+function loadOutfitsFromLocalStorage() {
+  var savedOutfits = window.localStorage.getItem('outfits');
+  var arrayOfOutfits;
+  if (savedOutfits) {
+    arrayOfOutfits = JSON.parse(savedOutfits);
+    arrayOfOutfits.forEach(outfit => createSavedOutfitCard(outfit));
+  }
+  return arrayOfOutfits || [];
+}
+
+function createSavedOutfitCard(outfit) {
   var domString = `<figure class = "saved_outfit active">
-            <h3>${currentOutfit.title}</h3>
+            <h3>${outfit.title}</h3>
             <button class="close-outfit-button">
               <div class="cross"></div>
               <div class="cross vertical"></div>
