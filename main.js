@@ -79,6 +79,7 @@ function saveOutfit() {
   if(titleInput.value != ''){
     createSavedOutfitCard();
     clearBearDisplay();
+    titleInput.value = '';
   }
   currentOutfit = new Outfit();
 }
