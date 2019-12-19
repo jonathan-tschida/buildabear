@@ -111,7 +111,7 @@ function loadOutfitsFromLocalStorage() {
 }
 
 function createSavedOutfitCard(outfit) {
-  var domString = `<figure class = "saved_outfit active">
+  var domString = `<figure id="${outfit.id}" class = "saved_outfit active">
             <h3>${outfit.title}</h3>
             <button class="close-outfit-button">
             x
@@ -137,5 +137,9 @@ function clearBearDisplay() {
 function removeCard(event) {
   if (event.target.classList.contains('close-outfit-button')) {
     event.target.parentNode.remove();
+    var outfitId = Number.parseInt(event.target.parentNode.id);
+    var index = outfits.findIndex(outfit => outfit.id === outfitId);
+    outfits.splice(index, 1);
+    addOutfitsToLocalStorage();
   }
 }
