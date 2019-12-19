@@ -49,18 +49,16 @@ function changeGarment() {
   }
 }
 
-function selectButton() {
+function selectButton(event) {
   if (event.target.classList.contains('item-button')) {
-    if (event.target.classList.contains('selected-button')) {
-      event.target.classList.remove('selected-button');
-    } else {
-      var garmentButtons = event.target.parentElement.querySelectorAll('.selected-button')
-      for(var i = 0; i < garmentButtons.length; i++) {
-        garmentButtons[i].classList.remove('selected-button')
-      }
-      event.target.classList.add('selected-button');
+    var garmentButtons = event.target.parentElement.querySelector('.selected-button');
+    if(garmentButtons != event.target && garmentButtons != null){
+      garmentButtons.classList.toggle('selected-button');
+      event.target.classList.toggle('selected-button');
+    }else {
+      event.target.classList.toggle('selected-button');
     }
-  }
+}
 }
 
 function showGarmentOnBear(garmentName, garmentBox) {
