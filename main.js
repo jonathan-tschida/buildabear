@@ -133,7 +133,6 @@ function clearBearDisplay() {
 }
 
 function removeCard(event) {
-  console.log(event.target);
   if (event.target.classList.contains('close-outfit-button')) {
     event.target.parentNode.remove();
     var outfitId = Number.parseInt(event.target.parentNode.id);
