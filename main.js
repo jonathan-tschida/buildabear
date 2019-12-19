@@ -50,9 +50,9 @@ function changeGarment() {
 
 function selectButton(event) {
   if (event.target.classList.contains('item-button')) {
-    var garmentButtons = event.target.parentElement.querySelector('.selected-button');
-    if (garmentButtons != event.target && garmentButtons != null) {
-      garmentButtons.classList.toggle('selected-button');
+    var prevSelectedButton = event.target.parentElement.querySelector('.selected-button');
+    if (prevSelectedButton != event.target && prevSelectedButton != null) {
+      prevSelectedButton.classList.toggle('selected-button');
     }
     event.target.classList.toggle('selected-button');
   }
