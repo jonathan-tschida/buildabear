@@ -7,10 +7,9 @@ var savedOutfits = document.querySelector('.saved-cards-container');
 
 //Store outfit Objects inside of an array(Should make this a local storage item)
 var outfits = loadOutfitsFromLocalStorage();;
-window.localStorage.setItem('id','0');
 var currentOutfit = new Outfit();
 
-window.localStorage.setItem('currentBackground', 'blue')
+localStorage.setItem('currentBackground', 'blue')
 
 saveButton.disabled = true;
 
@@ -24,8 +23,8 @@ savedOutfits.addEventListener('click', removeCard);
 function changeBackground() {
   if (event.target.classList.contains('item-button')) {
     var newBackground = event.target.innerText.toLowerCase();
-    var currentBackground = window.localStorage.getItem('currentBackground');
-    window.localStorage.setItem('currentBackground', newBackground)
+    var currentBackground = localStorage.getItem('currentBackground');
+    localStorage.setItem('currentBackground', newBackground)
     currentOutfit.background = newBackground;
     bearBox.classList.remove(currentBackground);
     bearBox.classList.add(newBackground);
@@ -84,8 +83,7 @@ function enableSaveButton() {
 
 function saveOutfit() {
   var curId = parseInt(localStorage.getItem('id'));
-  currentOutfit.id = curId;
-  localStorage.setItem('id', ++curId);
+  currentOutfit.id = 'd' + new Date().valueOf();
   currentOutfit.title = titleInput.value;
   outfits.push(currentOutfit);
   createSavedOutfitCard(currentOutfit);
@@ -97,11 +95,11 @@ function saveOutfit() {
 }
 
 function addOutfitsToLocalStorage() {
-  window.localStorage.setItem('outfits', JSON.stringify(outfits));
+  localStorage.setItem('outfits', JSON.stringify(outfits));
 }
 
 function loadOutfitsFromLocalStorage() {
-  var savedOutfits = window.localStorage.getItem('outfits');
+  var savedOutfits = localStorage.getItem('outfits');
   var arrayOfOutfits;
   if (savedOutfits) {
     arrayOfOutfits = JSON.parse(savedOutfits);
