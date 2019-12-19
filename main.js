@@ -7,7 +7,6 @@ var savedOutfits = document.querySelector('.saved-cards-container');
 
 //Store outfit Objects inside of an array(Should make this a local storage item)
 var outfits = loadOutfitsFromLocalStorage();;
-setIdInLocalStorage();
 var currentOutfit = new Outfit();
 
 localStorage.setItem('currentBackground', 'blue')
@@ -30,10 +29,6 @@ function changeBackground() {
     bearBox.classList.remove(currentBackground);
     bearBox.classList.add(newBackground);
   }
-}
-
-function setIdInLocalStorage() {
-  localStorage.getItem('id') || localStorage.setItem('id','0');;
 }
 
 function changeGarment() {
@@ -88,8 +83,7 @@ function enableSaveButton() {
 
 function saveOutfit() {
   var curId = parseInt(localStorage.getItem('id'));
-  currentOutfit.id = curId;
-  localStorage.setItem('id', ++curId);
+  currentOutfit.id = new Date().valueOf();
   currentOutfit.title = titleInput.value;
   outfits.push(currentOutfit);
   createSavedOutfitCard(currentOutfit);
