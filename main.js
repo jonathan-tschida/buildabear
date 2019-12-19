@@ -52,13 +52,11 @@ function changeGarment() {
 function selectButton(event) {
   if (event.target.classList.contains('item-button')) {
     var garmentButtons = event.target.parentElement.querySelector('.selected-button');
-    if(garmentButtons != event.target && garmentButtons != null){
+    if (garmentButtons != event.target && garmentButtons != null) {
       garmentButtons.classList.toggle('selected-button');
-      event.target.classList.toggle('selected-button');
-    }else {
-      event.target.classList.toggle('selected-button');
     }
-}
+    event.target.classList.toggle('selected-button');
+  }
 }
 
 function showGarmentOnBear(garmentName, garmentBox) {
