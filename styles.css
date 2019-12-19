@@ -308,10 +308,15 @@ input {
   position: relative;
   border-radius: 40% 40% 40% 40%;
   border:white .3em solid;
-  width: 3em;
-  height: 3em;
+  width: 2em;
+  height: 2em;
   padding: 0;
   cursor: pointer;
+  color: black;
+  font-family: 'Coming Soon', cursive;
+  font-weight: bold;
+  font-size: 1.5em;
+  line-height: 1em;
   background: #8b8b8b;
 }
 

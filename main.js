@@ -114,8 +114,7 @@ function createSavedOutfitCard(outfit) {
   var domString = `<figure class = "saved_outfit active">
             <h3>${outfit.title}</h3>
             <button class="close-outfit-button">
-              <div class="cross"></div>
-              <div class="cross vertical"></div>
+            x
             </button>
           </figure>`;
   var el = document.createElement('div');
