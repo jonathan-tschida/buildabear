@@ -54,7 +54,7 @@ function selectButton() {
     if (event.target.classList.contains('selected-button')) {
       event.target.classList.remove('selected-button');
     } else {
-      var garmentButtons = event.target.parentElement.querySelectorAll('.item-button')
+      var garmentButtons = event.target.parentElement.querySelectorAll('.selected-button')
       for(var i = 0; i < garmentButtons.length; i++) {
         garmentButtons[i].classList.remove('selected-button')
       }
