@@ -23,8 +23,7 @@ savedOutfits.addEventListener('click', removeCard);
 function changeBackground() {
   if (event.target.classList.contains('item-button')) {
     var newBackground = event.target.innerText.toLowerCase();
-    var currentBackground = localStorage.getItem('currentBackground');
-    localStorage.setItem('currentBackground', newBackground)
+    currentBackground = currentOutfit.background;
     currentOutfit.background = newBackground;
     bearBox.classList.remove(currentBackground);
     bearBox.classList.add(newBackground);
