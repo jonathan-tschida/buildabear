@@ -117,10 +117,8 @@ function createSavedOutfitCard(outfit) {
             x
             </button>
           </figure>`;
-  var el = document.createElement('div');
-  el.innerHTML = domString;
   var parent = document.querySelector('.saved-cards-container');
-  parent.prepend(el.firstChild);
+  parent.insertAdjacentHTML('afterbegin',domString);
 }
 
 function clearBearDisplay() {
@@ -135,6 +133,7 @@ function clearBearDisplay() {
 }
 
 function removeCard(event) {
+  console.log(event.target);
   if (event.target.classList.contains('close-outfit-button')) {
     event.target.parentNode.remove();
     var outfitId = Number.parseInt(event.target.parentNode.id);
