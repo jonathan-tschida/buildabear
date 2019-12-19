@@ -83,7 +83,7 @@ function enableSaveButton() {
 
 function saveOutfit() {
   var curId = parseInt(localStorage.getItem('id'));
-  currentOutfit.id = new Date().valueOf();
+  currentOutfit.id = 'd' + new Date().valueOf();
   currentOutfit.title = titleInput.value;
   outfits.push(currentOutfit);
   createSavedOutfitCard(currentOutfit);
