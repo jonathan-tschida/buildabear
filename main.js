@@ -111,14 +111,14 @@ function loadOutfitsFromLocalStorage() {
 }
 
 function createSavedOutfitCard(outfit) {
-  var domString = `<figure id="${outfit.id}" class = "saved_outfit active">
+  var cardElementHTML = `<figure id="${outfit.id}" class = "saved_outfit active">
             <h3>${outfit.title}</h3>
             <button class="close-outfit-button">
             x
             </button>
           </figure>`;
   var parent = document.querySelector('.saved-cards-container');
-  parent.insertAdjacentHTML('afterbegin',domString);
+  parent.insertAdjacentHTML('afterbegin',cardElementHTML);
 }
 
 function clearBearDisplay() {
