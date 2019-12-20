@@ -48,17 +48,13 @@ function changeGarment() {
   }
 }
 
-function selectButton() {
+function selectButton(event) {
   if (event.target.classList.contains('item-button')) {
-    if (event.target.classList.contains('selected-button')) {
-      event.target.classList.remove('selected-button');
-    } else {
-      var garmentButtons = event.target.parentElement.querySelectorAll('.item-button')
-      for(var i = 0; i < garmentButtons.length; i++) {
-        garmentButtons[i].classList.remove('selected-button');
-      }
-      event.target.classList.add('selected-button');
+    var prevSelectedButton = event.target.parentElement.querySelector('.selected-button');
+    if (prevSelectedButton != event.target && prevSelectedButton != null) {
+      prevSelectedButton.classList.toggle('selected-button');
     }
+    event.target.classList.toggle('selected-button');
   }
 }
 
