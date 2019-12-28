@@ -6,10 +6,10 @@ var bearBox = document.getElementById("bear-container");
 var savedOutfits = document.querySelector('.saved-cards-container');
 
 //Store outfit Objects inside of an array(Should make this a local storage item)
-var outfits = loadOutfitsFromLocalStorage();;
+var outfits = loadOutfitsFromLocalStorage();
 var currentOutfit = new Outfit();
 
-localStorage.setItem('currentBackground', 'blue')
+localStorage.setItem('currentBackground', 'blue');
 
 saveButton.disabled = true;
 
@@ -24,7 +24,7 @@ function changeBackground() {
   if (event.target.classList.contains('item-button')) {
     var newBackground = event.target.innerText.toLowerCase();
     var currentBackground = localStorage.getItem('currentBackground');
-    localStorage.setItem('currentBackground', newBackground)
+    localStorage.setItem('currentBackground', newBackground);
     currentOutfit.background = newBackground;
     bearBox.classList.remove(currentBackground);
     bearBox.classList.add(newBackground);
@@ -86,7 +86,7 @@ function saveOutfit() {
   clearBearDisplay();
   titleInput.value = '';
   enableSaveButton();
-  addOutfitsToLocalStorage()
+  addOutfitsToLocalStorage();
   currentOutfit = new Outfit();
 }
 
@@ -118,9 +118,9 @@ function createSavedOutfitCard(outfit) {
 }
 
 function clearBearDisplay() {
-  var garmentButtons = document.querySelectorAll('.item-button')
+  var garmentButtons = document.querySelectorAll('.item-button');
   for(var i = 0; i < garmentButtons.length; i++) {
-    garmentButtons[i].classList.remove('selected-button')
+    garmentButtons[i].classList.remove('selected-button');
   }
   document.getElementById('hat-container').classList = "hat-box";
   document.getElementById('clothing-container').classList = "clothing-box";
