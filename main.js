@@ -105,8 +105,10 @@ function loadOutfitsFromLocalStorage() {
 }
 
 function createSavedOutfitCard(outfit) {
-  var cardElementHTML = `<figure id="${outfit.id}" class = "saved_outfit active">
+  var cardElementHTML = `<figure id="${outfit.id}" class = "saved_outfit ${outfit.background}">
+            <div class = "overlay">
             <h3>${outfit.title}</h3>
+            </div>
             <button class="close-outfit-button">
             x
             </button>
