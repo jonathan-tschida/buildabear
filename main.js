@@ -135,5 +135,17 @@ function removeCard(event) {
     var index = outfits.findIndex(outfit => outfit.id === outfitId);
     outfits.splice(index, 1);
     addOutfitsToLocalStorage();
+  } else {
+    var outfitId = event.target.closest('.saved_outfit').id;
+    console.log(outfitId)
+    loadSavedOutfit(outfitId);
+  }
+}
+
+function loadSavedOutfit(id){
+  for(var i =0; i<outfits.length; i++){
+    if(outfits[i].id==id){
+      //Change Garments here
+    }
   }
 }
