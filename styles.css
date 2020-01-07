@@ -299,6 +299,7 @@ input {
   margin: 0px 20px 10px;
   border-radius:3px;
   width: 30%;
+  min-width: 300px;
   padding-top: 2em;
   background-color: #487AB9;
 }
@@ -322,24 +323,21 @@ input {
   position: relative;
   border-radius: 40% 40% 40% 40%;
   border:white .3em solid;
-  width: 2em;
-  height: 2em;
+  width: 3.2em;
+  height: 3em;
   padding: 0;
   cursor: pointer;
   color: black;
   font-family: 'Coming Soon', cursive;
-  font-weight: bold;
-  font-size: 1em;
   text-shadow: none;
-  line-height: 1em;
   background: #8b8b8b;
 }
 
 .close-outfit-button .cross {
-  top: 1.1em;
-  left: .21em;
+  top: 1em;
+  left: .14em;
   transform: rotate(45deg);
-  height: .3em;
+  height: .25em;
   width: 2em;
   position: absolute;
   background-color: #d0d2d3;
