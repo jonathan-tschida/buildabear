@@ -155,7 +155,6 @@ function removeCard(event) {
     event.target.parentNode.remove();
     var outfitId = event.target.parentNode.id;
     var index = outfits.findIndex(outfit => outfit.id === outfitId);
-    debugger;
     outfits.splice(index, 1);
     addOutfitsToLocalStorage();
   } else {
