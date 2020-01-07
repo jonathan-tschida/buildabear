@@ -121,7 +121,9 @@ function loadOutfitsFromLocalStorage() {
   var parsedOutfits;
   if (savedOutfits) {
     parsedOutfits = JSON.parse(savedOutfits);
-    parsedOutfits.forEach(outfit => createSavedOutfitCard(outfit));
+    for(var i = 0; i < parsedOutfits.length; i++) {
+      createSavedOutfitCard(parsedOutfits[i]);
+    }
   }
   return parsedOutfits || [];
 }
