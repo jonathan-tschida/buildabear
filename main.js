@@ -113,15 +113,17 @@ function replacePrexistingOutfit(outfit) {
 }
 
 function addOutfitsToLocalStorage() {
-  localStorage.setItem('outfits', JSON.stringify(outfits));
+  window.localStorage.setItem('outfits', JSON.stringify(outfits));
 }
 
 function loadOutfitsFromLocalStorage() {
-  var savedOutfits = localStorage.getItem('outfits');
+  var savedOutfits = window.localStorage.getItem('outfits');
   var parsedOutfits;
   if (savedOutfits) {
     parsedOutfits = JSON.parse(savedOutfits);
-    parsedOutfits.forEach(outfit => createSavedOutfitCard(outfit));
+    for(var i = 0; i < parsedOutfits.length; i++) {
+      createSavedOutfitCard(parsedOutfits[i]);
+    }
   }
   return parsedOutfits || [];
 }
@@ -154,7 +156,11 @@ function removeCard(event) {
   if (event.target.classList.contains('close-outfit-button')) {
     event.target.parentNode.remove();
     var outfitId = event.target.parentNode.id;
-    var index = outfits.findIndex(outfit => outfit.id === outfitId);
+    for(var i = 0; i < outfits.length; i++) {
+      if (outfits[i].id === outfitId) {
+        var index = i
+      }
+    }
     outfits.splice(index, 1);
     addOutfitsToLocalStorage();
   } else {
