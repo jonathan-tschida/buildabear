@@ -16,7 +16,6 @@ saveButton.disabled = true;
 backgroundButtons.addEventListener('click', changeBackground);
 itemButtonParent.addEventListener('click', changeGarment);
 saveButton.addEventListener('click', saveOutfit);
-itemButtonParent.addEventListener('click', selectButton);
 titleInput.addEventListener('keyup', enableSaveButton);
 savedOutfits.addEventListener('click', removeCard);
 
@@ -31,18 +30,19 @@ function changeBackground() {
   }
 }
 
-function changeGarment() {
+function changeGarment(event) {
+  selectButton(event);
   switch (event.target.parentElement.id) {
     case 'hat-buttons':
-      currentOutfit.addGarment(0, event.target.innerText);
+      currentOutfit.toggleGarment(0, event.target.innerText);
       showGarmentOnBear(event.target.id, 'hat-container');
       break;
     case 'clothes-buttons':
-      currentOutfit.addGarment(1, event.target.innerText);
+      currentOutfit.toggleGarment(1, event.target.innerText);
       showGarmentOnBear(event.target.id, 'clothing-container');
       break;
     case 'accessory-buttons':
-      currentOutfit.addGarment(2, event.target.innerText);
+      currentOutfit.toggleGarment(2, event.target.innerText);
       showGarmentOnBear(event.target.id, 'accessory-container');
       break;
   }
