@@ -133,7 +133,6 @@ function createSavedOutfitCard(outfit) {
             </div>
             <button class='close-outfit-button'>
             <div class = 'cross'></div>
-            <div class = 'cross vertical'></div>
             </button>
           </figure>`;
   var parent = document.querySelector('.saved-cards-container');
