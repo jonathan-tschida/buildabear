@@ -156,7 +156,11 @@ function removeCard(event) {
   if (event.target.classList.contains('close-outfit-button')) {
     event.target.parentNode.remove();
     var outfitId = event.target.parentNode.id;
-    var index = outfits.findIndex(outfit => outfit.id === outfitId);
+    for(var i = 0; i < outfits.length; i++) {
+      if (outfits[i].id == outfitId) {
+        var index = outfits[i].id
+      }
+    }
     outfits.splice(index, 1);
     addOutfitsToLocalStorage();
   } else {
