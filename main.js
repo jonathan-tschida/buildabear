@@ -96,7 +96,7 @@ function saveOutfit() {
   } else if(existed == true){
     var parent = document.getElementById(currentOutfit.id);
     parent.className = `saved_outfit ${currentOutfit.background}`;
-    parent.children[0].children[0].innerText = currentOutfit.title;
+    parent.querySelector('.saved-outfit-title').innerText = currentOutfit.title;
   }
   clearBearDisplay();
   titleInput.value = '';
