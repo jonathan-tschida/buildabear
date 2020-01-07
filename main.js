@@ -158,7 +158,7 @@ function removeCard(event) {
     var outfitId = event.target.parentNode.id;
     for(var i = 0; i < outfits.length; i++) {
       if (outfits[i].id === outfitId) {
-        var index = outfits[i].id
+        var index = i
       }
     }
     outfits.splice(index, 1);
