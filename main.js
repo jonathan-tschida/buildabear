@@ -58,7 +58,7 @@ function selectButton(event) {
   }
 }
 
-function setActiveButton(head, body, accessory, background) {
+function setActiveLoadedButtons(head, body, accessory, background) {
   var buttons = document.querySelectorAll('.item-button');
   for (var i = 0; i < buttons.length; i++) {
     if ([head, body, accessory, background].indexOf(buttons[i].innerText) >= 0) {
@@ -180,7 +180,7 @@ function loadSavedOutfit(id) {
       bearBox.classList.add(outfits[i].background);
       titleInput.value = outfits[i].title;
       enableSaveButton();
-      setActiveButton(head, body, accessory, outfits[i].background);
+      setActiveLoadedButtons(head, body, accessory, outfits[i].background);
     }
   }
 }
