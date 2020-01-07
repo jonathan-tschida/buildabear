@@ -145,12 +145,12 @@ function loadSavedOutfit(id){
   clearBearDisplay();
   for(var i =0; i<outfits.length; i++){
     if(outfits[i].id==id){
-      currentOutfit = outfits[i];
-      (currentOutfit.garments[0]!=null)?showGarmentOnBear(currentOutfit.garments[0].replace(/\s+/g, '-').toLowerCase(), 'hat-container') : '';
-      (currentOutfit.garments[1]!=null)?showGarmentOnBear(currentOutfit.garments[1].replace(/\s+/g, '-').toLowerCase(), 'clothing-container') : '';
-      (currentOutfit.garments[2]!=null)?showGarmentOnBear(currentOutfit.garments[2].replace(/\s+/g, '-').toLowerCase(), 'accessory-container') : '';
-      bearBox.classList.add(currentOutfit.background);
-      titleInput.value = currentOutfit.title;
+      outfits[i];
+      (outfits[i].garments[0]!=null)?showGarmentOnBear(outfits[i].garments[0].replace(/\s+/g, '-').toLowerCase(), 'hat-container') : '';
+      (outfits[i].garments[1]!=null)?showGarmentOnBear(outfits[i].garments[1].replace(/\s+/g, '-').toLowerCase(), 'clothing-container') : '';
+      (outfits[i].garments[2]!=null)?showGarmentOnBear(outfits[i].garments[2].replace(/\s+/g, '-').toLowerCase(), 'accessory-container') : '';
+      bearBox.classList.add(outfits[i].background);
+      titleInput.value = outfits[i].title;
     }
   }
 }
