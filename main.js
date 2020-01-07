@@ -58,6 +58,15 @@ function selectButton(event) {
   }
 }
 
+function setActiveLoadedButtons(head, body, accessory, background) {
+  var buttons = document.querySelectorAll('.item-button');
+  for (var i = 0; i < buttons.length; i++) {
+    if ([head, body, accessory, background].indexOf(buttons[i].innerText) >= 0) {
+      buttons[i].classList.toggle('selected-button');
+    }
+  }
+}
+
 function showGarmentOnBear(garmentName, garmentBox) {
   var garmentContainer = document.getElementById(garmentBox);
   if (garmentContainer.classList.contains(garmentName)) {
@@ -84,6 +93,10 @@ function saveOutfit() {
   if (existed == false) {
     outfits.push(currentOutfit);
     createSavedOutfitCard(currentOutfit)
+  } else if(existed == true){
+    var parent = document.getElementById(currentOutfit.id);
+    parent.className = `saved_outfit ${currentOutfit.background}`;
+    parent.querySelector('.saved-outfit-title').innerText = currentOutfit.title;
   }
   clearBearDisplay();
   titleInput.value = '';
@@ -119,7 +132,7 @@ function loadOutfitsFromLocalStorage() {
 function createSavedOutfitCard(outfit) {
   var cardElementHTML = `<figure id="${outfit.id}" class = "saved_outfit ${outfit.background}">
             <div class = "overlay">
-            <h3>${outfit.title}</h3>
+            <h3 class = 'saved-outfit-title'>${outfit.title}</h3>
             </div>
             <button class="close-outfit-button">
             x
@@ -153,17 +166,21 @@ function removeCard(event) {
   }
 }
 
-function loadSavedOutfit(id){
+function loadSavedOutfit(id) {
   clearBearDisplay();
-  for(var i = 0; i < outfits.length; i++){
-    if(outfits[i].id == id){
-      Object.assign(currentOutfit,outfits[i]);
-      (outfits[i].garments[0]!= null) ? showGarmentOnBear(outfits[i].garments[0].replace(/\s+/g, '-').toLowerCase(), 'hat-container') : '';
-      (outfits[i].garments[1]!= null) ? showGarmentOnBear(outfits[i].garments[1].replace(/\s+/g, '-').toLowerCase(), 'clothing-container') : '';
-      (outfits[i].garments[2]!= null) ? showGarmentOnBear(outfits[i].garments[2].replace(/\s+/g, '-').toLowerCase(), 'accessory-container') : '';
+  for (var i = 0; i < outfits.length; i++) {
+    if (outfits[i].id == id) {
+      Object.assign(currentOutfit, outfits[i]);
+      var head = outfits[i].garments[0];
+      var body = outfits[i].garments[1];
+      var accessory = outfits[i].garments[2];
+      (head != null) ? showGarmentOnBear(head.replace(/\s+/g, '-').toLowerCase(), 'hat-container'): '';
+      (body != null) ? showGarmentOnBear(body.replace(/\s+/g, '-').toLowerCase(), 'clothing-container'): '';
+      (accessory != null) ? showGarmentOnBear(accessory.replace(/\s+/g, '-').toLowerCase(), 'accessory-container'): '';
       bearBox.classList.add(outfits[i].background);
       titleInput.value = outfits[i].title;
       enableSaveButton();
+      setActiveLoadedButtons(head, body, accessory, outfits[i].background);
     }
   }
 }
