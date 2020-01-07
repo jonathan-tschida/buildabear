@@ -132,7 +132,8 @@ function createSavedOutfitCard(outfit) {
             <h3 class = 'saved-outfit-title'>${outfit.title}</h3>
             </div>
             <button class='close-outfit-button'>
-            x
+            <div class = 'cross'></div>
+            <div class = 'cross vertical'></div>
             </button>
           </figure>`;
   var parent = document.querySelector('.saved-cards-container');
@@ -151,8 +152,9 @@ function clearBearDisplay() {
 }
 
 function removeCard(event) {
-  if (event.target.classList.contains('close-outfit-button')) {
-    event.target.parentNode.remove();
+  if (event.target.classList.contains('close-outfit-button') || event.target.parentNode.classList.contains('close-outfit-button')) {
+    debugger;
+    event.target.closest('.saved_outfit').remove();
     var outfitId = event.target.parentNode.id;
     var index = outfits.findIndex(outfit => outfit.id === outfitId);
     outfits.splice(index, 1);
