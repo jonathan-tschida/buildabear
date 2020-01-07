@@ -1,6 +1,6 @@
 class Outfit{
   constructor() {
-    this.id = 1
+    this.id = null
     this.title = ''
     this.garments = [null, null, null];
     this.background = 'blue';

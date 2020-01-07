@@ -78,16 +78,28 @@ function enableSaveButton() {
 }
 
 function saveOutfit() {
-  var curId = parseInt(localStorage.getItem('id'));
-  currentOutfit.id = 'd' + new Date().valueOf();
+  if(!currentOutfit.id) currentOutfit.id = 'd' + new Date().valueOf();
+  var existed = replacePrexistingOutfit(currentOutfit);
   currentOutfit.title = titleInput.value;
-  outfits.push(currentOutfit);
-  createSavedOutfitCard(currentOutfit);
+  if (existed == false) {
+    outfits.push(currentOutfit);
+    createSavedOutfitCard(currentOutfit)
+  }
   clearBearDisplay();
   titleInput.value = '';
   enableSaveButton();
   addOutfitsToLocalStorage();
   currentOutfit = new Outfit();
+}
+
+function replacePrexistingOutfit(outfit) {
+  for (var i = 0; i < outfits.length; i++) {
+    if(outfits[i].id === outfit.id) {
+      outfits[i] = outfit;
+      return true;
+    }
+  }
+  return false;
 }
 
 function addOutfitsToLocalStorage() {
@@ -144,7 +156,8 @@ function removeCard(event) {
 function loadSavedOutfit(id){
   clearBearDisplay();
   for(var i =0; i<outfits.length; i++){
-    if(outfits[i].id==id){
+    if(outfits[i].id == id){
+      enableSaveButton();
       Object.assign(currentOutfit,outfits[i]);
       (outfits[i].garments[0]!=null)?showGarmentOnBear(outfits[i].garments[0].replace(/\s+/g, '-').toLowerCase(), 'hat-container') : '';
       (outfits[i].garments[1]!=null)?showGarmentOnBear(outfits[i].garments[1].replace(/\s+/g, '-').toLowerCase(), 'clothing-container') : '';
