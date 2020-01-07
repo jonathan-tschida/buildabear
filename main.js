@@ -167,7 +167,3 @@ function loadSavedOutfit(id){
     }
   }
 }
-
-function updateCurrentOutfit(outfit){
-  Object.assign(currentOutfit,outfit);
-}
