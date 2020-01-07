@@ -93,6 +93,9 @@ function saveOutfit() {
   if (existed == false) {
     outfits.push(currentOutfit);
     createSavedOutfitCard(currentOutfit)
+  } else if(existed == true){
+    var parent = document.getElementById(currentOutfit.id);
+    parent.children[0].children[0].innerText = currentOutfit.title;
   }
   clearBearDisplay();
   titleInput.value = '';
@@ -128,7 +131,7 @@ function loadOutfitsFromLocalStorage() {
 function createSavedOutfitCard(outfit) {
   var cardElementHTML = `<figure id="${outfit.id}" class = "saved_outfit ${outfit.background}">
             <div class = "overlay">
-            <h3>${outfit.title}</h3>
+            <h3 class = 'saved-outfit-title'>${outfit.title}</h3>
             </div>
             <button class="close-outfit-button">
             x
