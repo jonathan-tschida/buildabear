@@ -288,6 +288,13 @@ input {
   font-size: 1.55em;
 }
 
+.saved_outfit:hover{
+  box-shadow: 2px 2px 10px #F6EC5F, -2px -2px 10px #F6EC5F;
+}
+.selected{
+  box-shadow: 2px 2px 10px #F6EC5F, -2px -2px 10px #F6EC5F;
+}
+
 .overlay {
   border-radius: 3px;
   background-image: linear-gradient(to right, #fff 20%, transparent 60%);

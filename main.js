@@ -160,6 +160,8 @@ function removeCard(event) {
   } else {
     var outfitId = event.target.closest('.saved_outfit').id;
     loadSavedOutfit(outfitId);
+    (document.querySelector('.selected')) ? document.querySelector('.selected').classList.remove('selected') : '' ;
+    event.target.closest('.saved_outfit').classList.add('selected');
   }
 }
 
