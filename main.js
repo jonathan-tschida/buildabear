@@ -151,6 +151,7 @@ function loadSavedOutfit(id){
       (outfits[i].garments[2]!=null)?showGarmentOnBear(outfits[i].garments[2].replace(/\s+/g, '-').toLowerCase(), 'accessory-container') : '';
       bearBox.classList.add(outfits[i].background);
       titleInput.value = outfits[i].title;
+      enableSaveButton();
     }
   }
 }
