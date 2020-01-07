@@ -6,16 +6,12 @@ class Outfit{
     this.background = 'blue';
   }
 
-  addGarment(i, garmentName){
+  toggleGarment(i, garmentName){
     if (this.garments[i] == garmentName) {
-      this.removeGarment(i);
+      this.garments[i] = null;
     } else {
       this.garments[i] = garmentName;
     }
-  }
-
-  removeGarment(i){
-    this.garments[i] = null;
   }
 }
 
