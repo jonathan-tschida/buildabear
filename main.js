@@ -9,8 +9,6 @@ var savedOutfits = document.querySelector('.saved-cards-container');
 var outfits = loadOutfitsFromLocalStorage();
 var currentOutfit = new Outfit();
 
-localStorage.setItem('currentBackground', 'blue');
-
 saveButton.disabled = true;
 
 backgroundButtons.addEventListener('click', changeBackground);
@@ -22,8 +20,7 @@ savedOutfits.addEventListener('click', removeCard);
 function changeBackground() {
   if (event.target.classList.contains('item-button')) {
     var newBackground = event.target.innerText.toLowerCase();
-    var currentBackground = localStorage.getItem('currentBackground');
-    localStorage.setItem('currentBackground', newBackground);
+    var currentBackground = currentOutfit.background;
     currentOutfit.background = newBackground;
     bearBox.classList.remove(currentBackground);
     bearBox.classList.add(newBackground);
@@ -180,6 +177,7 @@ function loadSavedOutfit(id) {
       bearBox.classList.add(outfits[i].background);
       titleInput.value = outfits[i].title;
       enableSaveButton();
+      changeBackground();
       setActiveLoadedButtons(head, body, accessory, outfits[i].background);
     }
   }
