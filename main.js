@@ -172,6 +172,8 @@ function loadSavedOutfit(id) {
       var head = outfits[i].garments[0];
       var body = outfits[i].garments[1];
       var accessory = outfits[i].garments[2];
+      var background = outfits[i].background;
+      background = background.charAt(0).toUpperCase() + background.slice(1);
       (head != null) ? showGarmentOnBear(head.replace(/\s+/g, '-').toLowerCase(), 'hat-container'): '';
       (body != null) ? showGarmentOnBear(body.replace(/\s+/g, '-').toLowerCase(), 'clothing-container'): '';
       (accessory != null) ? showGarmentOnBear(accessory.replace(/\s+/g, '-').toLowerCase(), 'accessory-container'): '';
@@ -179,7 +181,7 @@ function loadSavedOutfit(id) {
       titleInput.value = outfits[i].title;
       enableSaveButton();
       changeBackground();
-      setActiveLoadedButtons(head, body, accessory, outfits[i].background);
+      setActiveLoadedButtons(head, body, accessory, background);
     }
   }
 }
