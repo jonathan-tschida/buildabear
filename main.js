@@ -113,11 +113,11 @@ function replacePrexistingOutfit(outfit) {
 }
 
 function addOutfitsToLocalStorage() {
-  localStorage.setItem('outfits', JSON.stringify(outfits));
+  window.localStorage.setItem('outfits', JSON.stringify(outfits));
 }
 
 function loadOutfitsFromLocalStorage() {
-  var savedOutfits = localStorage.getItem('outfits');
+  var savedOutfits = window.localStorage.getItem('outfits');
   var parsedOutfits;
   if (savedOutfits) {
     parsedOutfits = JSON.parse(savedOutfits);
@@ -157,7 +157,7 @@ function removeCard(event) {
     event.target.parentNode.remove();
     var outfitId = event.target.parentNode.id;
     for(var i = 0; i < outfits.length; i++) {
-      if (outfits[i].id == outfitId) {
+      if (outfits[i].id === outfitId) {
         var index = outfits[i].id
       }
     }
