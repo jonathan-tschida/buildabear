@@ -1,8 +1,8 @@
-var backgroundButtons = document.getElementById("background-buttons");
-var itemButtonParent = document.querySelector(".left-column");
+var backgroundButtons = document.getElementById('background-buttons');
+var itemButtonParent = document.querySelector('.left-column');
 var saveButton = document.querySelector('.save-button');
 var titleInput = document.getElementById('save-title-input');
-var bearBox = document.getElementById("bear-container");
+var bearBox = document.getElementById('bear-container');
 var savedOutfits = document.querySelector('.saved-cards-container');
 
 //Store outfit Objects inside of an array(Should make this a local storage item)
@@ -72,14 +72,14 @@ function showGarmentOnBear(garmentName, garmentBox) {
   if (garmentContainer.classList.contains(garmentName)) {
     garmentContainer.classList.remove(garmentName);
   } else {
-    var className = garmentContainer.className.split(" ")[0];
+    var className = garmentContainer.className.split(' ')[0];
     garmentContainer.className = className;
     garmentContainer.classList.add(garmentName);
   }
 }
 
 function enableSaveButton() {
-  if (titleInput.value == '') {
+  if (!titleInput.value) {
     saveButton.disabled = true;
   } else {
     saveButton.disabled = false;
@@ -90,10 +90,10 @@ function saveOutfit() {
   if(!currentOutfit.id) currentOutfit.id = 'd' + new Date().valueOf();
   var existed = replacePrexistingOutfit(currentOutfit);
   currentOutfit.title = titleInput.value;
-  if (existed == false) {
+  if (!existed) {
     outfits.push(currentOutfit);
     createSavedOutfitCard(currentOutfit)
-  } else if(existed == true){
+  } else if(existed){
     var parent = document.getElementById(currentOutfit.id);
     parent.className = `saved_outfit ${currentOutfit.background}`;
     parent.querySelector('.saved-outfit-title').innerText = currentOutfit.title;
@@ -121,20 +121,20 @@ function addOutfitsToLocalStorage() {
 
 function loadOutfitsFromLocalStorage() {
   var savedOutfits = localStorage.getItem('outfits');
-  var arrayOfOutfits;
+  var parsedOutfits;
   if (savedOutfits) {
-    arrayOfOutfits = JSON.parse(savedOutfits);
-    arrayOfOutfits.forEach(outfit => createSavedOutfitCard(outfit));
+    parsedOutfits = JSON.parse(savedOutfits);
+    parsedOutfits.forEach(outfit => createSavedOutfitCard(outfit));
   }
-  return arrayOfOutfits || [];
+  return parsedOutfits || [];
 }
 
 function createSavedOutfitCard(outfit) {
-  var cardElementHTML = `<figure id="${outfit.id}" class = "saved_outfit ${outfit.background}">
-            <div class = "overlay">
+  var cardElementHTML = `<figure id='${outfit.id}' class = 'saved_outfit ${outfit.background}'>
+            <div class = 'overlay'>
             <h3 class = 'saved-outfit-title'>${outfit.title}</h3>
             </div>
-            <button class="close-outfit-button">
+            <button class='close-outfit-button'>
             x
             </button>
           </figure>`;
@@ -147,10 +147,10 @@ function clearBearDisplay() {
   for(var i = 0; i < garmentButtons.length; i++) {
     garmentButtons[i].classList.remove('selected-button');
   }
-  document.getElementById('hat-container').classList = "hat-box";
-  document.getElementById('clothing-container').classList = "clothing-box";
-  document.getElementById('accessory-container').classList = "accessory-box";
-  document.getElementById('bear-container').classList = "bear-box blue background";
+  document.getElementById('hat-container').classList = 'hat-box';
+  document.getElementById('clothing-container').classList = 'clothing-box';
+  document.getElementById('accessory-container').classList = 'accessory-box';
+  document.getElementById('bear-container').classList = 'bear-box blue background';
 }
 
 function removeCard(event) {
@@ -169,7 +169,7 @@ function removeCard(event) {
 function loadSavedOutfit(id) {
   clearBearDisplay();
   for (var i = 0; i < outfits.length; i++) {
-    if (outfits[i].id == id) {
+    if (outfits[i].id === id) {
       Object.assign(currentOutfit, outfits[i]);
       var head = outfits[i].garments[0];
       var body = outfits[i].garments[1];
