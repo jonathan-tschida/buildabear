@@ -153,9 +153,8 @@ function clearBearDisplay() {
 
 function removeCard(event) {
   if (event.target.classList.contains('close-outfit-button') || event.target.parentNode.classList.contains('close-outfit-button')) {
-    debugger;
+    var outfitId = event.target.closest('.saved_outfit').id;
     event.target.closest('.saved_outfit').remove();
-    var outfitId = event.target.parentNode.id;
     var index = outfits.findIndex(outfit => outfit.id === outfitId);
     outfits.splice(index, 1);
     addOutfitsToLocalStorage();
