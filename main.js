@@ -23,8 +23,8 @@ function changeBackground() {
     var currentBackground = currentOutfit.background;
     currentOutfit.background = newBackground;
     bearBox.classList.remove(currentBackground);
-    bearBox.classList.add(newBackground);
   }
+  bearBox.classList.add(currentOutfit.background);
 }
 
 function changeGarment(event) {
@@ -63,8 +63,6 @@ function setActiveLoadedButtons(head, body, accessory, background) {
     }
   }
 }
-
-
 
 function enableSaveButton() {
   if (!titleInput.value) {
@@ -189,10 +187,9 @@ function loadSavedOutfit(id) {
       (head != null) ? showGarmentOnBear(head.replace(/\s+/g, '-').toLowerCase(), 'hat-container'): '';
       (body != null) ? showGarmentOnBear(body.replace(/\s+/g, '-').toLowerCase(), 'clothing-container'): '';
       (accessory != null) ? showGarmentOnBear(accessory.replace(/\s+/g, '-').toLowerCase(), 'accessory-container'): '';
-      bearBox.classList.add(outfits[i].background);
       titleInput.value = outfits[i].title;
-      enableSaveButton();
       changeBackground();
+      enableSaveButton();
       setActiveLoadedButtons(head, body, accessory, background);
     }
   }
