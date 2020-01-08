@@ -15,7 +15,7 @@ backgroundButtons.addEventListener('click', changeBackground);
 itemButtonParent.addEventListener('click', changeGarment);
 saveButton.addEventListener('click', saveOutfit);
 titleInput.addEventListener('keyup', enableSaveButton);
-savedOutfits.addEventListener('click', removeCard);
+savedOutfits.addEventListener('click', savedOutfitHelper);
 
 function changeBackground() {
   if (event.target.classList.contains('item-button')) {
@@ -64,16 +64,7 @@ function setActiveLoadedButtons(head, body, accessory, background) {
   }
 }
 
-function showGarmentOnBear(garmentName, garmentBox) {
-  var garmentContainer = document.getElementById(garmentBox);
-  if (garmentContainer.classList.contains(garmentName)) {
-    garmentContainer.classList.remove(garmentName);
-  } else {
-    var className = garmentContainer.className.split(' ')[0];
-    garmentContainer.className = className;
-    garmentContainer.classList.add(garmentName);
-  }
-}
+
 
 function enableSaveButton() {
   if (!titleInput.value) {
@@ -128,6 +119,17 @@ function loadOutfitsFromLocalStorage() {
   return parsedOutfits || [];
 }
 
+function showGarmentOnBear(garmentName, garmentBox) {
+  var garmentContainer = document.getElementById(garmentBox);
+  if (garmentContainer.classList.contains(garmentName)) {
+    garmentContainer.classList.remove(garmentName);
+  } else {
+    var className = garmentContainer.className.split(' ')[0];
+    garmentContainer.className = className;
+    garmentContainer.classList.add(garmentName);
+  }
+}
+
 function createSavedOutfitCard(outfit) {
   var cardElementHTML = `<figure id='${outfit.id}' class = 'saved_outfit ${outfit.background}'>
             <div class = 'overlay'>
@@ -152,23 +154,26 @@ function clearBearDisplay() {
   document.getElementById('bear-container').classList = 'bear-box blue background';
 }
 
-function removeCard(event) {
+function savedOutfitHelper(event) {
+  var outfitId = event.target.closest('.saved_outfit').id;
   if (event.target.classList.contains('close-outfit-button') || event.target.parentNode.classList.contains('close-outfit-button')) {
-    var outfitId = event.target.closest('.saved_outfit').id;
-    event.target.closest('.saved_outfit').remove();
-    for (var i = 0; i < outfits.length; i++) {
-      if (outfits[i].id === outfitId) {
-        var index = i
-      }
-    }
-    outfits.splice(index, 1);
-    addOutfitsToLocalStorage();
+    removeCard(event, outfitId);
   } else {
-    var outfitId = event.target.closest('.saved_outfit').id;
     loadSavedOutfit(outfitId);
     (document.querySelector('.selected')) ? document.querySelector('.selected').classList.remove('selected'): '';
     event.target.closest('.saved_outfit').classList.add('selected');
   }
+}
+
+function removeCard(event, outfitId) {
+  event.target.closest('.saved_outfit').remove();
+  for (var i = 0; i < outfits.length; i++) {
+    if (outfits[i].id === outfitId) {
+      var index = i
+    }
+  }
+  outfits.splice(index, 1);
+  addOutfitsToLocalStorage();
 }
 
 function loadSavedOutfit(id) {
