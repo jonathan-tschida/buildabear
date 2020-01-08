@@ -17,3 +17,9 @@ The webpage was created with HTML and CSS and the functionality was handled by J
 ![Our Website](./assets/buildabear-page.png)
 
 ### Contributors
+
+[Erik Raith](https://github.com/ERaith)
+
+[Jordan Whitten](https://github.com/jordanwa1947)
+
+[Jonathan Tschida](https://github.com/jonathan-tschida)
