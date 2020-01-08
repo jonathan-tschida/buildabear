@@ -78,7 +78,7 @@ function saveOutfit() {
   currentOutfit.title = titleInput.value;
   if (!existed) {
     outfits.push(currentOutfit);
-    createSavedOutfitCard(currentOutfit)
+    createSavedOutfitCard(currentOutfit);
   } else if (existed) {
     var parent = document.getElementById(currentOutfit.id);
     parent.className = `saved_outfit ${currentOutfit.background}`;
@@ -167,7 +167,7 @@ function removeCard(event, outfitId) {
   event.target.closest('.saved_outfit').remove();
   for (var i = 0; i < outfits.length; i++) {
     if (outfits[i].id === outfitId) {
-      var index = i
+      var index = i;
     }
   }
   outfits.splice(index, 1);
