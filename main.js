@@ -73,13 +73,13 @@ function enableSaveButton() {
 }
 
 function saveOutfit() {
-  if(!currentOutfit.id) currentOutfit.id = 'd' + new Date().valueOf();
+  if (!currentOutfit.id) currentOutfit.id = 'd' + new Date().valueOf();
   var existed = replacePrexistingOutfit(currentOutfit);
   currentOutfit.title = titleInput.value;
   if (!existed) {
     outfits.push(currentOutfit);
     createSavedOutfitCard(currentOutfit)
-  } else if(existed){
+  } else if (existed) {
     var parent = document.getElementById(currentOutfit.id);
     parent.className = `saved_outfit ${currentOutfit.background}`;
     parent.querySelector('.saved-outfit-title').innerText = currentOutfit.title;
@@ -93,7 +93,7 @@ function saveOutfit() {
 
 function replacePrexistingOutfit(outfit) {
   for (var i = 0; i < outfits.length; i++) {
-    if(outfits[i].id === outfit.id) {
+    if (outfits[i].id === outfit.id) {
       outfits[i] = outfit;
       return true;
     }
@@ -110,7 +110,7 @@ function loadOutfitsFromLocalStorage() {
   var parsedOutfits;
   if (savedOutfits) {
     parsedOutfits = JSON.parse(savedOutfits);
-    for(var i = 0; i < parsedOutfits.length; i++) {
+    for (var i = 0; i < parsedOutfits.length; i++) {
       createSavedOutfitCard(parsedOutfits[i]);
     }
   }
