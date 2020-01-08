@@ -134,7 +134,7 @@ function createSavedOutfitCard(outfit) {
             <h3 class = 'saved-outfit-title'>${outfit.title}</h3>
             </div>
             <button class='close-outfit-button'>
-            x
+            <div class = 'cross'></div>
             </button>
           </figure>`;
   var parent = document.querySelector('.saved-cards-container');
@@ -153,10 +153,10 @@ function clearBearDisplay() {
 }
 
 function removeCard(event) {
-  if (event.target.classList.contains('close-outfit-button')) {
-    event.target.parentNode.remove();
-    var outfitId = event.target.parentNode.id;
-    for(var i = 0; i < outfits.length; i++) {
+  if (event.target.classList.contains('close-outfit-button') || event.target.parentNode.classList.contains('close-outfit-button')) {
+    var outfitId = event.target.closest('.saved_outfit').id;
+    event.target.closest('.saved_outfit').remove();
+    for (var i = 0; i < outfits.length; i++) {
       if (outfits[i].id === outfitId) {
         var index = i
       }
@@ -166,6 +166,8 @@ function removeCard(event) {
   } else {
     var outfitId = event.target.closest('.saved_outfit').id;
     loadSavedOutfit(outfitId);
+    (document.querySelector('.selected')) ? document.querySelector('.selected').classList.remove('selected'): '';
+    event.target.closest('.saved_outfit').classList.add('selected');
   }
 }
 
